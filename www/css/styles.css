@@ -63,18 +63,65 @@ header {
 		background: #231F20;
 		margin-top: 24px;
 	}
-	.main-nav li {
-		display: inline-block;
-		margin-right: 5.8%;
+	.catalog-button {
+		display: flex;
+		height: 47px;
+		width: 100%;
+		color: #FFFFFF;
+		font-size: 14px;
+		background: #C83D43;
+		padding-right: 10px;
 	}
+	.catalog-button, .catalog-button:hover, .catalog-button:active, .catalog-button:focus {
+		text-decoration: none;
+		color: #FFFFFF;
+	}
+		.catalog-button:after {
+			content: '';
+			width: 10px;
+			height: 5px;
+			position: absolute;
+			right: 25px;
+			top: calc(50% - 2.5px);
+			background: url('../images/catalog-button-bg.png') no-repeat center center;
+			background-size: contain;
+		}
+		.catalog-button span {
+			margin: auto;
+		}
+	.main-nav {
+		display: flex;
+		margin-left: -30px;
+	}
+	.main-nav li {
+		flex-grow: 1;
+		background: transparent;
+		margin-top: -5px;
+		padding-top: 5px;
+		transition: height 0.3s ease-in-out, background 0.3s ease-in-out;
+	}
+		.main-nav li:hover, .main-nav li.active {
+			background: #FFFFFF;
+			height: 52px;
+			border-radius: 2px 2px 0 0;
+		}
 	.main-nav li:last-child {
 		margin-right: 0;
 	}
 		.main-nav li a {
 			font-size: 14px;
+			height: 47px;
+			display: flex;
 			color: #FFFFFF;
 			text-decoration: none;
+			transition: color 0.3s ease-in-out;
 		}
+		.main-nav li:hover a, .main-nav li.active a   {
+			color: #000000;
+		}
+			.main-nav li a span {
+				margin: auto;
+			}
 footer {
 	min-height: 300px;
 	background: url('../images/footer-bg.png') no-repeat center bottom;
