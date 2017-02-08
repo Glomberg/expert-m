@@ -1,9 +1,12 @@
 ﻿$(document).ready(function(){
-	$("a.scroll").on("click", function(e){
-		e.preventDefault();
-		href = $(this).attr("href");
-		if($(href).length != 0) {
-			$("body,html").stop().animate({ scrollTop: $(href).offset().top - 110}, 1000);
+	// Sticky menu
+	$(window).scroll(function(){
+		if($(document).scrollTop() > 115) {
+			$("header nav").addClass("fixed");
+			$("header").css("padding-bottom", "71px");
+		} else {
+			$("header nav").removeAttr("class");
+			$("header").removeAttr("style");
 		}
 	});
 });

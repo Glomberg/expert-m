@@ -35,21 +35,44 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-xs-3">
+			<div class="header-logo-col">
 				<a href="/"><img src="images/logo.png" alt="Логотип Эксперт-М"></a>
 			</div>
-			<div class="col-xs-5">
+			<div class="header-search-col">
 				<div class="header-phones">8(4212)40-82-02, 8-924-21-1118</div>
-				<form class="header-search">
-					<input type="text" name="header-seach" placeholder="Поиск..." />
+				<form action="" class="header-search">
+					<input type="text" name="header-seach" id="input-search" placeholder="" required />
+					<label for="input-search">Поиск...</label>
 					<input type="submit" value="" />
 				</form>
 			</div>
-			<div class="col-xs-2">
-				<a href="#">Написать нам</a>
+			<div class="header-feedback-col">
+				<a class="underlined" href="#feedback" data-toggle="modal">Написать нам</a>
+				<div class="modal fade" id="feedback">
+					<div class="modal-dialog">
+						<form action="" class="modal-content">
+							<div class="modal-header">Свяжитесь с нами</div>
+							<div class="modal-body">
+								<input class="animated-placeholder" type="text" id="feedback-name" required placeholder="Имя" />
+								<input class="animated-placeholder" type="tel" id="feedback-phone" required placeholder="Номер телефона" />
+								<input class="animated-placeholder" type="email" id="feedback-email" placeholder="E-mail">
+								<textarea class="animated-placeholder" name="feedback-text" id="feedback-text" required placeholder="Текст сообщения"></textarea>
+							</div>
+							<div class="modal-footer">
+								<div class="submit-result">Спасибо! Ваше сообщение было отправлено.</div>
+								<input type="submit" value="Отправить" />
+							</div>
+						</form>
+					</div>
+				</div>
 			</div>
-			<div class="col-xs-2">
+			<div class="header-basket-col">
 				<div class="basket">
+					<span class="ico"><span class="badge">115</span></span>
+					<span class="total-price underlined">20 547,87 руб</span>
+				</div>
+				<div class="basket-details col-xs-6">
+					<div class="basket-details-header">Корзина</div>
 					
 				</div>
 			</div>
@@ -58,12 +81,61 @@
 	<nav>
 		<div class="container">
 			<div class="row">
-				<div class="col-xs-2">
+				<div class="col-xs-12">
 					<a href="#" class="catalog-button"><span>Каталог товаров</span></a>
-				</div>
-				<div class="col-xs-10">
 					<ul class="main-nav">
-						<li><a href="#"><span>Распродажа</span></a></li>
+						<li><a href="#"><span>Распродажа</span></a>
+							<ul>
+								<li><a href="#">Второй уровень каталога</a>
+									<ul>
+										<li><a href="#">Категория 3 уровня</a></li>
+										<li><a href="#">Категория 3 уровня длинное название длинное название длинное название</a></li>
+										<li><a href="#">Категория 3 уровня</a></li>
+										<li><a href="#">Категория 3 уровня</a></li>
+										<li><a href="#">Категория 3 уровня</a></li>
+										<li><a href="#">Категория 3 уровня</a></li>
+									</ul>
+								</li>
+								<li><a href="#">Второй уровень каталога</a>
+									<ul>
+										<li><a href="#">Категория 3 уровня</a></li>
+										<li><a href="#">Категория 3 уровня длинное название длинное название длинное название</a></li>
+										<li><a href="#">Категория 3 уровня</a></li>
+										<li><a href="#">Категория 3 уровня</a></li>
+										<li><a href="#">Категория 3 уровня</a></li>
+										<li><a href="#">Категория 3 уровня</a></li>
+									</ul>
+								</li>
+								<li><a href="#">Второй уровень каталога</a></li>
+								<li><a href="#">Второй уровень каталога длинное название длинное название</a></li>
+								<li><a href="#">Второй уровень каталога</a></li>
+								<li><a href="#">Второй уровень каталога</a>
+									<ul>
+										<li><a href="#">Категория 3 уровня</a></li>
+										<li><a href="#">Категория 3 уровня</a></li>
+										<li><a href="#">Категория 3 уровня</a></li>
+										<li><a href="#">Категория 3 уровня</a></li>
+										<li><a href="#">Категория 3 уровня</a></li>
+										<li><a href="#">Категория 3 уровня</a></li>
+										<li><a href="#">Категория 3 уровня</a></li>
+										<li><a href="#">Категория 3 уровня</a></li>
+										<li><a href="#">Категория 3 уровня</a></li>
+										<li><a href="#">Категория 3 уровня</a></li>
+									</ul>
+								</li>
+								<li><a href="#">Второй уровень каталога</a>
+									<ul>
+										<li><a href="#">Категория 3 уровня</a></li>
+										<li><a href="#">Категория 3 уровня</a></li>
+										<li><a href="#">Категория 3 уровня</a></li>
+										<li><a href="#">Категория 3 уровня</a></li>
+										<li><a href="#">Категория 3 уровня</a></li>
+										<li><a href="#">Категория 3 уровня</a></li>
+										<li><a href="#">Категория 3 уровня</a></li>
+									</ul>
+								</li>
+							</ul>
+						</li>
 						<li><a href="#"><span>Сантехника</span></a></li>
 						<li><a href="#"><span>Продукты</span></a></li>
 						<li><a href="#"><span>Детство</span></a></li>
