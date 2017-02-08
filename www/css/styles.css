@@ -7,6 +7,9 @@ body {
 	font-style: normal;
 	line-height: 1;
 }
+a {
+	outline: none !important;
+}
 
 /* perks */
 .underlined {
@@ -239,6 +242,7 @@ header {
 		margin-top: 24px;
 		top: -50px;
 		transition: top 0.3s ease-in-out;
+		z-index: 3;
 	}
 	header nav.fixed {
 		position: fixed;
@@ -311,6 +315,7 @@ header {
 	.main-nav > li > ul {
 		visibility: hidden;
 		opacity: 0;
+		z-index: 1;
 		display: flex;
 		justify-content: flex-start;
 		flex-wrap: wrap;
@@ -348,6 +353,163 @@ header {
 			color: #303033;
 		}
 footer {
-	min-height: 300px;
+	padding: 47px 0 50px;
 	background: url('../images/footer-bg.png') no-repeat center bottom;
+	font-size: 13px;
+	font-weight: 300;
+	color: #FFFFFF;
 }
+	.footer-cols-wrapper {
+		display: flex;
+		margin-bottom: 49px;
+	}
+	.footer-col {
+		flex-grow: 1;
+	}
+	.footer-col > span {
+		color: #B6CBD9;
+		font-weight: bold;
+		font-size: 24px;
+		line-height: 1.1;
+	}
+	.footer-col ul li {
+		margin-bottom: 3px;
+	}
+	.footer-col ul li a {
+		color: #FFFFFF;
+		font-weight: 300;
+		text-decoration: none;
+		font-size: 15px;
+	}
+	.footer-socials {
+		padding-top: 20px;
+		text-align: right;
+	}
+		.footer-socials li {
+			display: inline-block;
+			margin-left: 20px;
+		}
+			.footer-socials li a {
+				display: block;
+				width: 50px;
+				height: 50px;
+				background-image: url('../images/footer-socials.png');
+				background-repeat: no-repeat;
+				transition: opacity 0.3s ease-in-out;
+			}
+			.footer-socials li:nth-child(1) a {
+				background-position: left center;
+			}
+			.footer-socials li:nth-child(2) a {
+				background-position: -72px center;
+			}
+			.footer-socials li:nth-child(3) a {
+				background-position: -144px center;
+			}
+			.footer-socials li:nth-child(4) a {
+				background-position: -216px center;
+			}
+			.footer-socials li:nth-child(5) a {
+				background-position:right center;
+			}
+			.footer-socials li a:hover {
+				opacity: 0.75;
+			}
+	.footer-copyright {
+		display: flex;
+		align-items: flex-end;
+	}
+		.footer-copyright > div {
+			flex-grow: 1;
+			line-height: 1.2;
+		}
+		.footer-copyright > div:last-child {
+			text-align: right;
+		}
+		.footer-copyright > div:last-child a {
+			color: #FFFFFF;
+			text-decoration: underline;
+		}
+		
+.slider {
+	background: linear-gradient(to right, #EBEBEB, #E9E9E9);
+}
+.carousel-control.left, .carousel-control.right {
+	display: block;
+	width: 120px;
+	height: 120px;
+	border-radius: 50%;
+	background: url('../images/slider-control.png') no-repeat center top transparent;
+	top: calc(50% - 60px);
+	opacity: 0.8;
+	transition: opacity 0.3s ease-in-out;
+	z-index: 1;
+}
+.carousel-control.right {
+	background-position: center bottom;
+}
+.carousel-control:hover {
+	opacity: 1;
+}
+
+
+.frontpage-categories {
+	padding-top: 47px;
+}
+.frontpage-categories a {
+	display: block;
+	height: 255px;
+	margin-bottom: 33px;
+	text-align: center;
+	position: relative;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-color: #D3C3B8;
+	outline: 1px solid #E8E8E8;
+}
+	.frontpage-categories a span {
+		text-decoration: none;
+		color: #FFFFFF;
+		font-size: 30px;
+		display: block;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		padding: 20px 0;
+		background: rgba(75,75,77,0.83);
+		transition: all 0.3s ease-in-out;
+	}
+	.frontpage-categories a:hover span {
+		color: #231F20;
+		background: rgba(255,255,255,0.83);
+	}
+	.frontpage-categories .offer-of-the-week {
+		border-top: 6px solid #DB4248;
+		background: transparent;
+		text-decoration: none;
+		position: relative;
+	}
+		.frontpage-categories .offer-of-the-week .label {
+			width: 76px;
+			height: 42px;
+			background: #C83D43;
+			text-align: center;
+			color: #FFFFFF;
+			font-weight: bold;
+			padding-top: 12px;
+			font-size: 14.25px;
+			z-index: 1;
+			position: absolute;
+			top: -12px;
+			right: 8px;
+		}
+		.frontpage-categories .offer-of-the-week .label:after {
+			content: '';
+			position: absolute;
+			left: 0;
+			top: 42px;
+			border: 38px solid transparent;
+			border-top: 34px solid #C83D43;
+		}

@@ -3,14 +3,11 @@
 <head>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width">
-	<title></title>
+	<title>Эксперт-М</title>
 	<link rel="stylesheet" type="text/css" href="css/css-reset.css" />
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
 	<link rel="stylesheet" type="text/css" href="css/styles.css" />
 	<link rel="stylesheet" type="text/css" href="css/media.css" />
-	<script src="js/jquery-3.1.1.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/script.js"></script>
 	<!--[if lt IE 9]>
 	   <script>
 		  document.createElement('header');
@@ -23,6 +20,226 @@
 	<![endif]-->
 </head>
 <body>
-
+<!-- header -->
+<header>
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12">
+				<ul class="small-nav">
+					<li><a class="underlined" href="#">О компании</a></li>
+					<li><a class="underlined" href="#">Акции</a></li>
+					<li><a class="underlined" href="#">Контакты</a></li>
+					<li><a class="underlined" href="#">Доставка</a></li>
+					<li><a class="underlined" href="#">Блог</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="row">
+			<div class="header-logo-col">
+				<a href="/"><img src="images/logo.png" alt="Логотип Эксперт-М"></a>
+			</div>
+			<div class="header-search-col">
+				<div class="header-phones">8(4212)40-82-02, 8-924-21-1118</div>
+				<form action="" class="header-search">
+					<input type="text" name="header-seach" id="input-search" placeholder="" required />
+					<label for="input-search">Поиск...</label>
+					<input type="submit" value="" />
+				</form>
+			</div>
+			<div class="header-feedback-col">
+				<a class="underlined" href="#feedback" data-toggle="modal">Написать нам</a>
+				<div class="modal fade" id="feedback">
+					<div class="modal-dialog">
+						<form action="" class="modal-content">
+							<div class="modal-header">Свяжитесь с нами</div>
+							<div class="modal-body">
+								<input class="animated-placeholder" type="text" id="feedback-name" required placeholder="Имя" />
+								<input class="animated-placeholder" type="tel" id="feedback-phone" required placeholder="Номер телефона" />
+								<input class="animated-placeholder" type="email" id="feedback-email" placeholder="E-mail">
+								<textarea class="animated-placeholder" name="feedback-text" id="feedback-text" required placeholder="Текст сообщения"></textarea>
+							</div>
+							<div class="modal-footer">
+								<div class="submit-result">Спасибо! Ваше сообщение было отправлено.</div>
+								<input type="submit" value="Отправить" />
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+			<div class="header-basket-col">
+				<div class="basket">
+					<span class="ico"><span class="badge">115</span></span>
+					<span class="total-price underlined">20 547,87 руб</span>
+				</div>
+				<div class="basket-details col-xs-6">
+					<div class="basket-details-header">Корзина</div>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+	<nav>
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12">
+					<a href="#" class="catalog-button"><span>Каталог товаров</span></a>
+					<ul class="main-nav">
+						<li><a href="#"><span>Распродажа</span></a>
+							<ul>
+								<li><a href="#">Второй уровень каталога</a>
+									<ul>
+										<li><a href="#">Категория 3 уровня</a></li>
+										<li><a href="#">Категория 3 уровня длинное название длинное название длинное название</a></li>
+										<li><a href="#">Категория 3 уровня</a></li>
+										<li><a href="#">Категория 3 уровня</a></li>
+										<li><a href="#">Категория 3 уровня</a></li>
+										<li><a href="#">Категория 3 уровня</a></li>
+									</ul>
+								</li>
+								<li><a href="#">Второй уровень каталога</a>
+									<ul>
+										<li><a href="#">Категория 3 уровня</a></li>
+										<li><a href="#">Категория 3 уровня длинное название длинное название длинное название</a></li>
+										<li><a href="#">Категория 3 уровня</a></li>
+										<li><a href="#">Категория 3 уровня</a></li>
+										<li><a href="#">Категория 3 уровня</a></li>
+										<li><a href="#">Категория 3 уровня</a></li>
+									</ul>
+								</li>
+								<li><a href="#">Второй уровень каталога</a></li>
+								<li><a href="#">Второй уровень каталога длинное название длинное название</a></li>
+								<li><a href="#">Второй уровень каталога</a></li>
+								<li><a href="#">Второй уровень каталога</a>
+									<ul>
+										<li><a href="#">Категория 3 уровня</a></li>
+										<li><a href="#">Категория 3 уровня</a></li>
+										<li><a href="#">Категория 3 уровня</a></li>
+										<li><a href="#">Категория 3 уровня</a></li>
+										<li><a href="#">Категория 3 уровня</a></li>
+										<li><a href="#">Категория 3 уровня</a></li>
+										<li><a href="#">Категория 3 уровня</a></li>
+										<li><a href="#">Категория 3 уровня</a></li>
+										<li><a href="#">Категория 3 уровня</a></li>
+										<li><a href="#">Категория 3 уровня</a></li>
+									</ul>
+								</li>
+								<li><a href="#">Второй уровень каталога</a>
+									<ul>
+										<li><a href="#">Категория 3 уровня</a></li>
+										<li><a href="#">Категория 3 уровня</a></li>
+										<li><a href="#">Категория 3 уровня</a></li>
+										<li><a href="#">Категория 3 уровня</a></li>
+										<li><a href="#">Категория 3 уровня</a></li>
+										<li><a href="#">Категория 3 уровня</a></li>
+										<li><a href="#">Категория 3 уровня</a></li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li><a href="#"><span>Сантехника</span></a></li>
+						<li><a href="#"><span>Продукты</span></a></li>
+						<li><a href="#"><span>Детство</span></a></li>
+						<li><a href="#"><span>Активная косметика</span></a></li>
+						<li><a href="#"><span>Для дома</span></a></li>
+						<li><a href="#"><span>Бытовая химия</span></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</nav>
+</header>
+<!-- /header -->
+<div class="slider">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12">
+				<div id="frontpage-carousel" class="carousel slide" data-ride="carousel" data-interval="5000">
+					<!-- Wrapper for slides -->
+					<div class="carousel-inner">
+						<div class="item active">
+							<a href="#"><img src="images/slide-1.png" alt="Слайд 1"></a>
+						</div>
+						<div class="item">
+							<a href="#"><img src="images/slide-1.png" alt="Слайд 1"></a>
+						</div>
+						<div class="item">
+							<a href="#"><img src="images/slide-1.png" alt="Слайд 1"></a>
+						</div>
+					</div>
+					<!-- Controls -->
+					<a class="left carousel-control" href="#frontpage-carousel" data-slide="prev"></a>
+					<a class="right carousel-control" href="#frontpage-carousel" data-slide="next"></a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="container frontpage-categories">
+	<div class="row">
+		<div class="col-xs-4"><a href="#" style="background-image: url('images/category1.jpg');"><span>Продукты</span></a></div>
+		<div class="col-xs-4"><a href="#" style="background-image: url('images/category2.jpg');"><span>Детство</span></a></div>
+		<div class="col-xs-4"><a href="#" style="background-image: url('images/category1.jpg');"><span>Косметика</span></a></div>
+		<div class="col-xs-4"><a href="#" style="background-image: url('images/category4.jpg');"><span>Сантехника</span></a></div>
+		<div class="col-xs-4"><a href="#" style="background-image: url('images/category5.jpg');"><span>Fiskars</span></a></div>
+		<div class="col-xs-4"><a href="#" class="offer-of-the-week">
+			<div class="label">ВЫБОР<br>НЕДЕЛИ</div>
+		</a></div>
+	</div>
+</div>
+<!-- footer -->
+<footer>
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12 footer-cols-wrapper">
+				<div class="footer-col">
+					<span>Каталог</span>
+					<ul>
+						<li><a href="#">Посмотреть каталог онлайн</a></li>
+						<li><a href="#">Заказать каталог по почте</a></li>
+						<li><a href="#">Брошюры</a></li>
+						<li><a href="#">Руководства по покупке</a></li>
+					</ul>
+				</div>
+				<div class="footer-col">
+					<span>Каталог</span>
+					<ul>
+						<li><a href="#">Посмотреть каталог онлайн</a></li>
+						<li><a href="#">Заказать каталог по почте</a></li>
+						<li><a href="#">Брошюры</a></li>
+						<li><a href="#">Руководства по покупке</a></li>
+					</ul>
+				</div>
+				<div class="footer-col">
+					<span>Каталог</span>
+					<ul>
+						<li><a href="#">Посмотреть каталог онлайн</a></li>
+						<li><a href="#">Заказать каталог по почте</a></li>
+						<li><a href="#">Брошюры</a></li>
+						<li><a href="#">Руководства по покупке</a></li>
+					</ul>
+				</div>
+				<div class="footer-col">
+					<ul class="footer-socials">
+						<li><a href="#"></a></li>
+						<li><a href="#"></a></li>
+						<li><a href="#"></a></li>
+						<li><a href="#"></a></li>
+						<li><a href="#"></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12 footer-copyright">
+				<div>© 2014 ИП Земляк Мария Владимировна<br>Интернет-магазин продуктов питания с доставкой на дом.<br>680003, г.Хабаровск, ул. Краснореченская, 97а</div>
+				<div>Разработка сайта <a href="http://web-alt.ru" target="_blank">web-alt.ru</a></div>
+			</div>
+		</div>
+	</div>
+</footer>
+<!-- /footer -->
+<script src="js/jquery-3.1.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/script.js"></script>
 </body>
 </html>
