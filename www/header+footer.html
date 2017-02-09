@@ -53,10 +53,22 @@
 						<form action="" class="modal-content">
 							<div class="modal-header">Свяжитесь с нами</div>
 							<div class="modal-body">
-								<input class="animated-placeholder" type="text" id="feedback-name" required placeholder="Имя" />
-								<input class="animated-placeholder" type="tel" id="feedback-phone" required placeholder="Номер телефона" />
-								<input class="animated-placeholder" type="email" id="feedback-email" placeholder="E-mail">
-								<textarea class="animated-placeholder" name="feedback-text" id="feedback-text" required placeholder="Текст сообщения"></textarea>
+								<div class="input">
+									<input class="animated-placeholder" type="text" id="feedback-name" required placeholder="" />
+									<label for="feedback-name">Имя</label>
+								</div>
+								<div class="input">
+									<input class="animated-placeholder" type="tel" id="feedback-phone" required placeholder="" />
+									<label for="feedback-phone">Номер телефона</label>
+								</div>
+								<div class="input">
+									<input class="animated-placeholder" type="email" id="feedback-email" required placeholder="">
+									<label for="feedback-email">E-mail</label>
+								</div>
+								<div class="input">
+									<textarea class="animated-placeholder" name="feedback-text" id="feedback-text" required placeholder=""></textarea>
+									<label for="feedback-text">Текст сообщения</label>
+								</div>
 							</div>
 							<div class="modal-footer">
 								<div class="submit-result">Спасибо! Ваше сообщение было отправлено.</div>
@@ -204,6 +216,7 @@
 <!-- /footer -->
 <script src="js/jquery-3.1.1.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.dotdotdot.min.js"></script>
 <script src="js/script.js"></script>
 </body>
 </html>
