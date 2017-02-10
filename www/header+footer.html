@@ -41,9 +41,9 @@
 			</div>
 			<div class="header-search-col">
 				<div class="header-phones">8(4212)40-82-02, 8-924-21-1118</div>
-				<form action="" class="header-search">
-					<input type="text" name="header-seach" id="input-search" placeholder="" required />
-					<label for="input-search">Поиск...</label>
+				<form action="" method="POST" class="header-search animated-placeholder">
+					<input type="text" name="header-seach" id="input-search" placeholder="Поиск..." required />
+					<label for="input-search"></label>
 					<input type="submit" value="" />
 				</form>
 			</div>
@@ -51,24 +51,24 @@
 				<a class="underlined" href="#feedback" data-toggle="modal">Написать нам</a>
 				<div class="modal fade" id="feedback">
 					<div class="modal-dialog">
-						<form action="" class="modal-content">
+						<form action="" method="POST" class="modal-content animated-placeholder">
 							<div class="modal-header">Свяжитесь с нами</div>
 							<div class="modal-body">
 								<div class="input">
-									<input class="animated-placeholder" type="text" id="feedback-name" required placeholder="" />
-									<label for="feedback-name">Имя</label>
+									<input class="animated-placeholder" type="text" id="feedback-name" name="feedback-name" required placeholder="Имя" />
+									<label for="feedback-name"></label>
 								</div>
 								<div class="input">
-									<input class="animated-placeholder" type="tel" id="feedback-phone" required placeholder="" />
-									<label for="feedback-phone">Номер телефона</label>
+									<input class="animated-placeholder" type="tel" id="feedback-phone" name="feedback-phone" required placeholder="Номер телефона" />
+									<label for="feedback-phone"></label>
 								</div>
 								<div class="input">
-									<input class="animated-placeholder" type="email" id="feedback-email" required placeholder="">
-									<label for="feedback-email">E-mail</label>
+									<input class="animated-placeholder" type="email" id="feedback-email" name="feedback-email" placeholder="E-mail">
+									<label for="feedback-email"></label>
 								</div>
 								<div class="input">
-									<textarea class="animated-placeholder" name="feedback-text" id="feedback-text" required placeholder=""></textarea>
-									<label for="feedback-text">Текст сообщения</label>
+									<textarea class="animated-placeholder" name="feedback-text" id="feedback-text" required placeholder="Текст сообщения"></textarea>
+									<label for="feedback-text"></label>
 								</div>
 							</div>
 							<div class="modal-footer">
@@ -84,9 +84,85 @@
 					<span class="ico"><span class="badge">115</span></span>
 					<span class="total-price underlined">20 547,87 руб</span>
 				</div>
-				<div class="basket-details col-xs-6">
+				<div class="basket-details">
 					<div class="basket-details-header">Корзина</div>
-					
+					<div class="basket-details-body">
+						<div class="item">Ваша корзина еще пуста.</div>
+						<div class="item">
+							<div class="img" style="background-image: url('images/tovar-1.png');"></div>
+							<div class="title">Инициатик - средства против первых морщин длинный текст длинный текст длинный текст</div>
+							<div class="pcs">2 <span>шт</span></div>
+							<div class="price">
+								<div>
+									<div>3593.37 <span>руб</span></div><!-- Normal price -->
+								</div>
+							</div>
+							<div class="remove">
+								<a href="#"></a>
+							</div>
+						</div>
+						<div class="item">
+							<div class="img" style="background-image: url('images/tovar-2.jpg');"></div>
+							<div class="title">Инициатик - средства против первых морщин длинный текст длинный текст длинный текст</div>
+							<div class="pcs">2 <span>шт</span></div>
+							<div class="price">
+								<div>
+									<div class="special-price">3593.37 <span>руб</span></div><!-- Special price -->
+									<div class="old-price">3593.37 <span>руб</span></div><!-- Old price -->
+								</div>
+							</div>
+							<div class="remove">
+								<a href="#"></a>
+							</div>
+						</div>
+						<div class="item">
+							<div class="img" style="background-image: url('images/tovar-2.jpg');"></div>
+							<div class="title">Инициатик - средства против первых морщин длинный текст длинный текст длинный текст</div>
+							<div class="pcs">2 <span>шт</span></div>
+							<div class="price">
+								<div>
+									<div>3593.37 <span>руб</span></div><!-- Normal price -->
+								</div>
+							</div>
+							<div class="remove">
+								<a href="#"></a>
+							</div>
+						</div>
+						<div class="item">
+							<div class="img" style="background-image: url('images/tovar-2.jpg');"></div>
+							<div class="title">Инициатик - средства против первых морщин длинный текст длинный текст длинный текст</div>
+							<div class="pcs">2 <span>шт</span></div>
+							<div class="price">
+								<div>
+									<div>3593.37 <span>руб</span></div><!-- Normal price -->
+								</div>
+							</div>
+							<div class="remove">
+								<a href="#"></a>
+							</div>
+						</div>
+						<div class="item">
+							<div class="img" style="background-image: url('images/tovar-2.jpg');"></div>
+							<div class="title">Инициатик - средства против первых морщин длинный текст длинный текст длинный текст</div>
+							<div class="pcs">2 <span>шт</span></div>
+							<div class="price">
+								<div>
+									<div>3593.37 <span>руб</span></div><!-- Normal price -->
+								</div>
+							</div>
+							<div class="remove">
+								<a href="#"></a>
+							</div>
+						</div>
+					</div>
+					<div class="basket-details-footer">
+						<a href="catalog-text.html">Смотреть все товары</a>
+						<div class="summ">
+							<span>Итого:</span>
+							<span>3593.37</span>
+							<span>руб</span>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -95,7 +171,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-12">
-					<a href="#" class="catalog-button"><span>Каталог товаров</span></a>
+					<a href="catalog-text.html" class="catalog-button"><span>Каталог товаров</span></a>
 					<ul class="main-nav">
 						<li><a href="#"><span>Распродажа</span></a>
 							<ul>
