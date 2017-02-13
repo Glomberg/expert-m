@@ -7,6 +7,7 @@
 	<link rel="stylesheet" type="text/css" href="css/css-reset.css" />
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
 	<link rel="stylesheet" type="text/css" href="css/waves.min.css" />
+	<link rel="stylesheet" type="text/css" href="adds/jquery-ui/jquery-ui.min.css" />
 	<link rel="stylesheet" type="text/css" href="css/styles.css" />
 	<link rel="stylesheet" type="text/css" href="css/media.css" />
 	<!--[if lt IE 9]>
@@ -275,7 +276,102 @@
 	<div class="row">
 		<div class="col-xs-3 bx-filter">
 			<form action="" method="GET" class="smartfilter">
-				
+				<div class="bx-filter-parameters-box range-slider">
+					<div class="bx-filter-parameters-box-title"><span>Цена, руб.</span></div>
+					<div class="bx-filter-block row">
+						<div class="col-xs-6 bx-filter-input-container">
+							<input id="min-cost" type="text" value="24" />
+						</div>
+						<div class="col-xs-6 bx-filter-input-container">
+							<input id="max-cost" type="text" value="5082" />
+						</div>
+						<div class="col-xs-12 bx-ui-slider-track-container">
+							<div class="slider-labels">
+								<div class="bx-ui-slider-part">24</div>
+								<div class="bx-ui-slider-part">1289</div>
+								<div class="bx-ui-slider-part">2553</div>
+								<div class="bx-ui-slider-part">3818</div>
+								<div class="bx-ui-slider-part">5082</div>
+							</div>
+							<div class="bx-ui-slider-track"></div>
+						</div>
+					</div>
+				</div>
+				<div class="bx-filter-parameters-box checkboxes">
+					<div class="bx-filter-parameters-box-title"><span>Бренд</span></div>
+					<div class="bx-filter-block">
+						<div class="checkbox">
+							<label for="brand-1" class="bx-filter-param-label">
+								<span class="bx-filter-input-checkbox">
+									<input id="brand-1" type="checkbox">
+									<span class="bx-filter-param-text">AXE</span>
+								</span>
+							</label>
+						</div>
+						<div class="checkbox">
+							<label for="brand-2" class="bx-filter-param-label">
+								<span class="bx-filter-input-checkbox">
+									<input id="brand-2" type="checkbox">
+									<span class="bx-filter-param-text">Bruno Banani</span>
+								</span>
+							</label>
+						</div>
+						<div class="checkbox">
+							<label for="brand-3" class="bx-filter-param-label">
+								<span class="bx-filter-input-checkbox">
+									<input id="brand-3" type="checkbox">
+									<span class="bx-filter-param-text">Calvin Klein</span>
+								</span>
+							</label>
+						</div>
+						<div class="checkbox">
+							<label for="brand-4" class="bx-filter-param-label">
+								<span class="bx-filter-input-checkbox">
+									<input id="brand-4" type="checkbox">
+									<span class="bx-filter-param-text">Calorina Herrera</span>
+								</span>
+							</label>
+						</div>
+						<div class="checkbox">
+							<label for="brand-5" class="bx-filter-param-label">
+								<span class="bx-filter-input-checkbox">
+									<input id="brand-5" type="checkbox">
+									<span class="bx-filter-param-text">Christina Aguilera</span>
+								</span>
+							</label>
+						</div>
+						<div class="checkbox">
+							<label for="brand-6" class="bx-filter-param-label">
+								<span class="bx-filter-input-checkbox">
+									<input id="brand-6" type="checkbox">
+									<span class="bx-filter-param-text">Christine Lavoisier</span>
+								</span>
+							</label>
+						</div>
+						<div class="checkbox">
+							<label for="brand-7" class="bx-filter-param-label">
+								<span class="bx-filter-input-checkbox">
+									<input id="brand-7" type="checkbox">
+									<span class="bx-filter-param-text">City</span>
+								</span>
+							</label>
+						</div>
+						<div class="checkbox">
+							<label for="brand-8" class="bx-filter-param-label">
+								<span class="bx-filter-input-checkbox">
+									<input id="brand-8" type="checkbox">
+									<span class="bx-filter-param-text">DOLCE&GABBANA</span>
+								</span>
+							</label>
+						</div>
+					</div>
+				</div>
+				<div class="bx-filter-button-box">
+					<div class="bx-filter-block">
+						<input type="submit" id="del_filter" value="Сбросить фильтр" />
+						<input type="submit" id="set_filter" value="Применить фильтр" />
+					</div>
+				</div>
 			</form>
 		</div>
 		<div class="col-xs-9">
@@ -508,6 +604,7 @@
 <script src="js/bootstrap.min.js"></script>
 <script src="js/jquery.dotdotdot.min.js"></script>
 <script src="js/waves.min.js"></script>
+<script src="adds/jquery-ui/jquery-ui.min.js"></script>
 <script src="js/script.js"></script>
 </body>
 </html>

@@ -62,4 +62,39 @@ $(document).ready(function(){
 	Waves.attach(".to-the-cart", [
 		"waves-button"
 	]);
+	// jQuery UI slider
+	if($('.bx-ui-slider-track').length >= 1) {
+		var slider_min_value = parseInt($('#min-cost').val());
+		var slider_max_value = parseInt($('#max-cost').val());
+		$('.bx-ui-slider-track').slider({
+			range: true,
+			animate: true,
+			min: slider_min_value,
+			max: slider_max_value,
+			values: [slider_min_value, slider_max_value],
+			slide: function( event, ui ) {
+				$('#min-cost').val(ui.values[ 0 ]);
+				$('#max-cost').val(ui.values[ 1 ])
+			}
+		});
+		$("input#min-cost").change(function(){
+			var value1=$("input#min-cost").val();
+			var value2=$("input#max-cost").val();
+			if(parseInt(value1) > parseInt(value2)){
+				value1 = value2;
+				$("input#min-cost").val(value1);
+			}
+			$(".bx-ui-slider-track").slider("values",0,value1);	
+		});
+		$("input#max-cost").change(function(){
+			var value1=$("input#min-cost").val();
+			var value2=$("input#max-cost").val();
+			if (value2 > 1000) { value2 = 1000; $("input#max-cost").val(1000)}
+			if(parseInt(value1) > parseInt(value2)){
+				value2 = value1;
+				$("input#max-cost").val(value2);
+			}
+			$(".bx-ui-slider-track").slider("values",1,value2);
+		});
+	}
 });
