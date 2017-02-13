@@ -57,4 +57,9 @@ $(document).ready(function(){
 		e.preventDefault();
 		$(this).parent().parent('.item').slideUp();
 	});
+	// Waves buttons
+	Waves.init();
+	Waves.attach(".to-the-cart", [
+		"waves-button"
+	]);
 });
