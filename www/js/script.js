@@ -28,6 +28,8 @@ $(document).ready(function(){
 			}
 		});
 	}
+	// Masked input
+	//$('.modal input[type="tel"]').mask("+7(999)999-9999");
 	// Mini-Cart opener
 	$('.header-basket-col .basket').on('click', function(){
 		if($('.header-basket-col .basket-details').is(':visible')) {
@@ -95,6 +97,59 @@ $(document).ready(function(){
 				$("input#max-cost").val(value2);
 			}
 			$(".bx-ui-slider-track").slider("values",1,value2);
+		});
+	}
+	// Zoom and Image change
+	if($('.product-images .mini-images').length >= 1) {
+		$('.product-images .mini-images > div:eq(0)').addClass('active');
+		function select_the_image() {
+			var image_src = $('.product-images .mini-images .active img').attr('src');
+			$('.product-images .main-image').css('background-image', 'url(' + image_src + ')');
+			$('.product-images .main-image img').attr('src', image_src).attr('data-zoom-image', image_src);
+		}
+		select_the_image();
+		$('.product-images .main-image img').elevateZoom({
+				zoomWindowWidth:440,
+				zoomWindowHeight:430,
+				borderSize:2,
+				borderColour:'#BECAD3'
+			});
+		$('.product-images .mini-image').on('click', function(){
+			$('.product-images .mini-image').removeClass('active');
+			$(this).addClass('active');
+			select_the_image();
+			$('.product-images .main-image img').data('elevateZoom').swaptheimage($('.product-images .mini-images .active img').attr('src'), $('.product-images .mini-images .active img').attr('src'));
+		});
+	}
+	// input[type="number"] customization
+	if($('#product-count-input').length >= 1) {
+		var min_value = parseInt($('#product-count-input').attr('min'));
+		var max_value = parseInt($('#product-count-input').attr('max'));
+		var current_value = $('#product-count-input').val();
+		$('#product-count-input').after('<input id="product-count-input-clone" type="text" data-min-value="' + min_value + '" data-max-value="' + max_value + '" />');
+		$('#product-count-input-clone').val(current_value);
+		$('#product-count-input-clone').after('<div id="product-count-increment"></div><div id="product-count-decrement"></div>');
+		function check_product_cout() {
+			if ($('#product-count-input-clone').val() < min_value) {
+				$('#product-count-input-clone').val(min_value);
+				$('#product-count-input').val(min_value);
+			} else if ($('#product-count-input-clone').val() > max_value) {
+				$('#product-count-input-clone').val(max_value);
+				$('#product-count-input').val(max_value);
+			} else {
+				$('#product-count-input').val($('#product-count-input-clone').val());
+			}
+		}
+		$('#product-count-input-clone').on('keyup, change', function(){
+			check_product_cout();
+		});
+		$('#product-count-increment').on('click', function(){
+			$('#product-count-input-clone').val(parseInt($('#product-count-input-clone').val()) + 1);
+			check_product_cout();
+		});
+		$('#product-count-decrement').on('click', function(){
+			$('#product-count-input-clone').val(parseInt($('#product-count-input-clone').val()) - 1);
+			check_product_cout();
 		});
 	}
 });
