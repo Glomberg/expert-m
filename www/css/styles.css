@@ -204,7 +204,7 @@ a {
 	}
 /* pager */
 .pager{
-	margin: 0 0 49;
+	/*margin: 0 0 49px;*/
 } 
 .pager a {
 	color: #303033;
@@ -1358,23 +1358,23 @@ footer {
 #product-count-increment:hover, #product-count-decrement:hover {
 	background: #DF555A;
 }
-.price {
+.product .price {
 	font-size: 38px;
 	color: #000000;
 	margin-bottom: 44px;
 }
-.price .special-price {
+.product .price .special-price {
 	color: #CB1F26;
 	margin-bottom: 4px;
 }
-	.price > div span {
+	.product .price > div span {
 		font-size: 22px;
 	}
-.price .old-price {
+.product .price .old-price {
 	font-size: 30px;
 	text-decoration: line-through;
 }
-	.price .old-price span {
+	.product .price .old-price span {
 		font-size: 18px;
 	}
 .buy-button {
@@ -1390,6 +1390,7 @@ footer {
 		padding: 10px 0;
 		border-radius: 2px;
 		transition: opacity 0.3s ease-in-out;
+		text-decoration: none;
 	}
 	.buy-button a:hover {
 		opacity: 0.75;
@@ -1431,3 +1432,171 @@ footer {
 	.reviews .heading > a:hover {
 		opacity: 0.75;
 	}
+.reviews ul {
+	padding-top: 21px; 
+}
+.reviews ul li {
+	margin-bottom: 25px;
+}
+.reviews ul li:last-child {
+	margin-bottom: 0;
+}
+.review-header {
+	border-bottom: 3px solid #D1DEE6;
+	margin-bottom: 25px;
+}
+	.review-header .row > div:first-child {
+		color: #88A1B2;
+		font-size: 17px;
+		font-style: italic;
+		padding-top: 4px;
+	}
+	.review-header .row > div:last-child {
+		color: #7F7F7F;
+		font-size: 18.95px;
+		text-align: right;
+		padding-top: 4px;
+	}
+	.review-header .row > div p {
+		margin-bottom: 9px;
+	}
+
+.review-body {
+	line-height: 1.2;
+}
+.stars {
+	text-align: right;
+	white-space: nowrap;
+}
+	.stars > div {
+		display: inline-block;
+		width: 24px;
+		height: 24px;
+		background: url('../images/star-gray.svg') no-repeat center center;
+		background-size: contain;
+		margin-right: 6px;
+	}
+	.stars > div.active {
+		background-image: url('../images/star-orange.svg');
+	}
+	.stars > div:last-child {
+		margin-right: 0;
+	}
+.reviews .pager {
+	text-align: center;
+	margin: 6px 0 69px;
+}
+	.reviews .pager a {
+		float: none;
+		height: 38px;
+		display: inline-block;
+	}
+	
+.blog {
+	
+}
+	.blog .breadcrumb {
+		margin-bottom: 13px;
+	}
+	.blog p {
+		line-height: 1.2;
+	}
+.blog-intro {
+	margin-bottom: 24px;
+}
+#blog-sorting {
+	margin-bottom: 55px;
+}
+	#blog-sorting h2 {
+		font-size: 18.95px;
+		font-weight: normal;
+		margin: 0;
+	}
+	#blog-sorting label {
+		font-weight: normal;
+		vertical-align: center;
+		font-size: 18.95px;
+		color: #89A2B3;
+		padding-right: 7px;
+		margin-bottom: 0;
+	}
+	#blog-sorting input {
+		vertical-align: center;
+		height: 38px;
+		border-radius: 2px;
+	}
+	#blog-sorting input[type="text"] {
+		border: 2px solid #EDF3F6;
+		padding: 0 4px;
+		color: #000000;
+	}
+	#blog-sorting input[type="submit"] {
+		font-size: 16px;
+		color: #FFFFFF;
+		background: #89A2B3;
+		transition: opacity 0.3s ease-in-out;
+	}
+	#blog-sorting input[type="submit"]:hover {
+		opacity: 0.75;
+	}
+		#blog-sorting .row > div {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+			#blog-sorting .row > div > input {
+				flex-grow: 1;
+			}
+.blog section {
+	min-height: 100px;
+	box-shadow: 0 0 6px 0 rgba(0,0,0,0.11);
+	margin-bottom: 30px;
+	padding: 25px;
+}
+	.blog .meta {
+		margin-bottom: 18px;
+	}
+		.blog .meta span {
+			font-size: 19px;
+			color: #878787;
+			line-height: 1.3;
+		}
+		.blog .meta .separator {
+			padding: 0 7px;
+			color: #89A2B3;
+			font-size: 18px;
+		}
+		.blog .meta .category {
+			color: #89A2B3;
+			font-style: italic;
+			font-size: 17px;
+		}
+	.blog .image {
+		height: 200px;
+		background-repeat: no-repeat;
+		background-position: center center;
+		background-color: rgba(0,0,0,0.05);
+		background-size: cover;
+	}
+		.blog .image img {
+			opacity: 0;
+			width: 100%;
+			height: 100%;
+		}
+	.blog article {
+		
+	}
+		.blog article h3 {
+			color: #000000;
+			font-size: 18px;
+			margin: 21px 0 18px;
+			font-weight: normal;
+		}
+		.blog article p {
+			font-size: 14.25px;
+			color: #4F4F4F;
+		}
+		.blog article .pager {
+			margin: 0;
+			margin-top: 5px;
+		}

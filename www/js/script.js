@@ -152,4 +152,25 @@ $(document).ready(function(){
 			check_product_cout();
 		});
 	}
+	// Stars raiting
+	if( $('.stars').length >= 1 ) {
+		$('.stars').each(function(){
+			if($(this).attr('data-stars-count')) {
+				var stars_count = parseInt($(this).attr('data-stars-count'));
+				if (stars_count < 0 || stars_count > 5) {
+					console.log('"data-stars-count" attribute must be 1-5');
+				} else {
+					for(var i = 1; i <= 5; i++) {
+						if(i <= stars_count) {
+							$(this).append('<div class="active"></div>');
+						} else {
+							$(this).append('<div></div>');
+						}
+					}
+				}
+			} else {
+				console.log('"data-stars-count" attribute not exists');
+			}
+		});
+	}
 });
