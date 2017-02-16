@@ -262,7 +262,7 @@
 		</div>
 	</div>
 	<div class="row">
-		<div class="col-xs-12 stages">
+		<div class="col-xs-12 stages" style="margin-bottom: 43px;">
 			<div>Корзина</div>
 			<div></div>
 			<div class="active">Доставка/Оплата</div>
@@ -273,7 +273,7 @@
 	<form id="order-step2" action="" method="POST" class="row animated-placeholder">
 		<div class="col-xs-12">
 			<h3>Информация для доставки</h3>
-			<div class="row">
+			<div class="row order-inputs">
 				<div class="col-xs-12 col-md-6">
 					<div class="input">
 						<input class="animated-placeholder" type="text" id="shiping-name" name="shiping-name" required placeholder="Имя" />
@@ -327,22 +327,49 @@
 			<div class="row">
 				<div class="col-xs-12 col-md-6">
 					<input type="radio" id="shiping-variant-courier" name="shiping-variant" value="Курьером" checked />
-					<label for="shiping-variant-courier"></label>
+					<label for="shiping-variant-courier">
+						<div class="checkbox-ico"><div></div></div>
+						<div class="checkbox-content">
+							<div>
+								<div class="ico"></div>
+								<span>+1250 р</span>
+							</div>
+							<div>
+								<p>Выберите желаемые дату и время доставки:</p>
+								<input type="text" id="datepicker" />
+								<input type="time" />
+							</div>
+							<div>Стоимость доставки <span>500 р</span></div>
+						</div>
+					</label>
 				</div>
 				<div class="col-xs-12 col-md-6">
 					<input type="radio" id="shiping-variant-self" name="shiping-variant" value="Самовывоз" />
-					<label for="shiping-variant-self"></label>
+					<label for="shiping-variant-self">
+						<div class="checkbox-ico"><div></div></div>
+						<div class="checkbox-content">
+							<div>
+								<div class="ico"></div>
+								<span>+0 р</span>
+							</div>
+							<a href="#" id="select-outpost" >Выбрать пункт</a>
+						</div>
+					</label>
 				</div>
 			</div>
 			<h3>Способ оплаты</h3>
 			<div class="row">
 				<div class="col-xs-12 col-md-6">
 					<input type="radio" id="payment-variant-courier" name="payment-variant" value="Наличными" />
-					<label for="payment-variant-courier"></label>
+					<label for="payment-variant-courier">
+						<div class="checkbox-ico"><div></div></div>
+					</label>
 				</div>
 				<div class="col-xs-12 col-md-6">
 					<input type="radio" id="payment-variant-self" name="payment-variant" value="Картой" checked />
-					<label for="payment-variant-self"></label>
+					<label for="payment-variant-self">
+						<div class="checkbox-ico"><div></div></div>
+					</label>
 				</div>
 			</div>
 		</div>

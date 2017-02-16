@@ -2028,7 +2028,7 @@ img.float-right {
 	color: #303033;
 	text-align: center;
 	background: #DDEAF2;
-	margin: 0 0 25px;
+	margin: 0 0 11px;
 	padding: 15px 0;
 }
 .cart .order-description {
@@ -2076,15 +2076,172 @@ img.float-right {
 #order-step2 input[id*="shiping-variant"] + label,
 #order-step2 input[id*="payment-variant"] + label {
 	display: block;
-	height: 290px;
+	height: 293px;
 	background: #F7F7F7;
+	border: 3px solid #F7F7F7;
 	border-radius: 2px;
-	margin-bottom: 30px;
+	margin-bottom: 28px;
+	position: relative;
+	font-weight: normal;
 }
 #order-step2 input[id*="payment-variant"] + label {
-	height: 142px;
+	height: 144px;
 }
 #order-step2 input[id*="shiping-variant"]:checked + label,
 #order-step2 input[id*="payment-variant"]:checked + label  {
 	border: 3px solid #87D1FF;
+}
+#order-step2 input[id*="shiping-variant"] + label:before,
+#order-step2 input[id*="payment-variant"] + label:before {
+	content: '';
+	width: 100%;
+	height: 100%;
+	display: block;
+	top: 0;
+	left: 0;
+	z-index: 2;
+	background: transparent;
+	position: absolute;
+}
+	#order-step2 input[id*="shiping-variant"]:checked + label:before,
+	#order-step2 input[id*="payment-variant"]:checked + label:before {
+		display: none;
+	}
+#order-step2 .order-inputs {
+	margin-bottom: 25px;
+	padding-top: 14px;
+}
+#order-step2 .order-inputs + h3 {
+	margin-bottom: 11px;
+}
+#order-step2 .checkbox-ico {
+	float:left;
+	width: 25%;
+}
+#order-step2 .checkbox-ico {
+	float:left;
+	width: 20%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+	#order-step2 .checkbox-ico > div {
+		width: 42px;
+		height: 42px;
+		border-radius: 50%;
+		background: #DDEAF2;
+		position: relative;
+	}
+	#order-step2 .checkbox-ico > div:before {
+		content: '';
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		background: url('../images/checkbox-ico-checked.png') no-repeat center center transparent;
+		visibility: hidden;
+		-webkit-transition: all 150ms ease;
+		transition: all 150ms ease;
+		-webkit-transform: scaleX(0);
+		-ms-transform: scaleX(0);
+		transform: scaleX(0);
+	}
+	#order-step2 input[id*="shiping-variant"]:checked + label .checkbox-ico > div:before,
+	#order-step2 input[id*="payment-variant"]:checked + label .checkbox-ico > div:before {
+		visibility: visible;
+		-webkit-transform: scaleX(1);
+		-ms-transform: scaleX(1);
+		transform: scaleX(1);
+	}
+#order-step2 .checkbox-content {
+	float:right;
+	width: 73%;
+	padding-top: 45px;
+}
+#order-step2 input[id*="shiping-variant"] + label .checkbox-content > div {
+	
+}
+#order-step2 input[id*="shiping-variant"] + label .checkbox-content > div:nth-child(1) {
+	display: flex;
+	align-items: center;
+	margin-bottom: 18px;
+}
+#order-step2 input[id="shiping-variant-courier"] + label .checkbox-content > div:nth-child(1) {
+	margin-bottom: 33px;
+}
+#order-step2 input[id="shiping-variant-courier"] + label .checkbox-content > div:nth-child(1) .ico {
+	background: url('../images/shiping-variant-ico-1.png') no-repeat center center;
+	width: 90px;
+	height: 61px;
+	margin-right: 20px;
+}
+#order-step2 input[id="shiping-variant-self"] + label .checkbox-content > div:nth-child(1) .ico {
+	background: url('../images/shiping-variant-ico-2.png') no-repeat center center;
+	width: 66px;
+	height: 66px;
+	margin-right: 20px;
+}
+#order-step2 input[id*="shiping-variant"] + label .checkbox-content > div:nth-child(1) span {
+	color: #BABABA;
+	font-size: 24px;
+}
+	#order-step2 input[id*="shiping-variant"]:checked + label .checkbox-content > div:nth-child(1) span {
+		color: #DB4248;
+	}
+#order-step2 input[id="shiping-variant-self"] + label .checkbox-content a {
+	display: inline-block;
+	width: 150px;
+	height: 34px;
+	background: #BABABA;
+	color: #FFFFFF;
+	font-size: 16px;
+	text-align: center;
+	line-height: 34px;
+	text-decoration: none;
+	border-radius: 2px;
+	border: none;
+}
+	#order-step2 input[id="shiping-variant-self"]:checked + label .checkbox-content a {
+		background: #DB4248;
+		transition: opacity 0.3s ease-in-out;
+	}
+	#order-step2 input[id="shiping-variant-self"]:checked + label .checkbox-content a:hover {
+		opacity: 0.75;
+	}
+#order-step2 input[id="shiping-variant-courier"] + label .checkbox-content > div:nth-child(2) {
+	color: #BABABA;
+	font-size: 16.84px;
+	margin-bottom: 35px;
+	position: relative;
+}
+	#order-step2 input[id="shiping-variant-courier"]:checked + label .checkbox-content > div:nth-child(2) {
+		color: #231F20;
+	}
+#order-step2 input[id="shiping-variant-courier"] + label .checkbox-content > div:nth-child(3) {
+	color: #BABABA;
+	font-size: 16.84px;
+}
+	#order-step2 input[id="shiping-variant-courier"]:checked + label .checkbox-content > div:nth-child(3) {
+		color: #231F20;
+	}
+	#order-step2 input[id="shiping-variant-courier"] + label .checkbox-content > div:nth-child(3) span {
+		font-size: 24px;
+		vertical-align: middle;
+	}
+	#order-step2 input[id="shiping-variant-courier"]:checked + label .checkbox-content > div:nth-child(3) span {
+		color: #DB4248;
+	}
+#order-step2 input[id="shiping-variant-courier"] + label .checkbox-content > div:nth-child(2) input {
+	display: inline-block;
+	width: 45%;
+	height: 32px;
+	border: 2px solid #E7ECF0;
+}
+.ui-datepicker-trigger {
+	position: absolute;
+	left: calc(40% - 6px);
+	bottom: 6px;
+	cursor: pointer;
 }
