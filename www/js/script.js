@@ -20,7 +20,7 @@ $(document).ready(function(){
 				$(this).attr('placeholder', '');
 			}
 		});
-		$('.animated-placeholder input, .animated-placeholder textarea').focus(function(){
+		$('*[placeholder]').focus(function(){
 			$(this).next().css(hidden_styles);
 		}).blur(function(){
 			if($(this).val() == '') {

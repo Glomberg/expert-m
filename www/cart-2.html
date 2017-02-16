@@ -239,7 +239,7 @@
 	</nav>
 </header>
 <!-- /header -->
-<div class="container content product">
+<div class="container content cart">
 	<div class="row">
 		<div class="col-xs-6"></div>
 		<div class="col-xs-6 free-shiping free-shiping-2">
@@ -255,159 +255,101 @@
 	</div>
 	<div class="row">
 		<div class="col-xs-12">
-			<div class="ol breadcrumb" style="margin-bottom: 12px;">
-				<li><a href="#">Хлебные крошки</a></li>
-				<li><a href="#">Хлебные крошки</a></li>
-				<li><a href="#">Хлебные крошки</a></li>
-				<li><a href="#">Хлебные крошки</a></li>
-				<li><a href="#">Хлебные крошки</a></li>
-				<li><a href="#">Хлебные крошки</a></li>
-				<li><a href="#">Хлебные крошки</a></li>
-				<li><a href="#">Хлебные крошки</a></li>
-				<li class="active">Хлебные крошки (уровень 1)</li>
+			<div class="ol breadcrumb">
+				<li><a href="#">Главная</a></li>
+				<li class="active">Корзина</li>
 			</div>
 		</div>
 	</div>
 	<div class="row">
+		<div class="col-xs-12 stages">
+			<div>Корзина</div>
+			<div></div>
+			<div class="active">Доставка/Оплата</div>
+			<div></div>
+			<div>Подтверждение</div>
+		</div>
+	</div>
+	<form id="order-step2" action="" method="POST" class="row animated-placeholder">
 		<div class="col-xs-12">
-			<h1>blanco germany (silver delux style) - кран железный delux style артикул if456 AM на разъём 10 дюймов</h1>
-		</div>
-		<div class="col-xs-12 art">Артикул: 4680001872484</div>
-		<div class="col-xs-5">
-			<div class="product-images">
-				<div class="main-image">
-					<!-- Большое изображение будет загружаться сюда с помощью JS. Заполнятйе только mini-images. Выбирайте изображения побольше -->
-					<img src="" alt="" data-zoom-image="" />
-				</div>
-				<div class="mini-images">
-					<div class="mini-image"><img src="images/product-image-big.jpg" alt="Товар - изображение 1"></div>
-					<div class="mini-image"><img src="images/product-image.jpg" alt="Товар - изображение 2"></div>
-					<div class="mini-image"><img src="images/category4.jpg" alt="Товар - изображение 3"></div>
-					<div class="mini-image"><img src="images/category5.jpg" alt="Товар - изображение 4"></div>
-					<div class="mini-image"><img src="images/product-image.jpg" alt="Товар - изображение 5"></div>
-				</div>
-			</div>
-		</div>
-		<div class="col-xs-7">
-			<div class="product-description">
-				<p>Флюид против первых морщин Инициатик 40 мл. Разглаживает, увлажняет. защищает. Флюид против первых морщин Инициатик 40 мл. Разглаживает, увлажняет. защищает. Флюид против первых морщин Инициатик 40 мл. Разглаживает, увлажняет. защищает.Флюид против первых морщин Инициатик 40 мл. Разглаживает, увлажняет. защищает.Флюид против первых морщин Инициатик 40 мл. Разглаживает, увлажняет. защищает. Разглаживает, увлажняет. защищает.</p>
-			</div>
-			<div class="count">
-				<label for="product-count-input">кол-во</label>
-				<input id="product-count-input" type="number" min="1" max="999" step="1" value="1" />
-			</div>
-			<div class="price">
-				<div>
-					<!--<div>3593.37 <span>руб</span></div> Normal price -->
-					<div class="special-price">3593.37 <span>руб</span></div><!-- Special price -->
-					<div class="old-price">3593.37 <span>руб</span></div><!-- Old price -->
-				</div>
-			</div>
-			<div class="buy-button">
-				<a href="#">Купить</a>
-			</div>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-xs-12 reviews">
+			<h3>Информация для доставки</h3>
 			<div class="row">
-				<div class="col-xs-12 heading">
-					<span>Отзывы о товаре <span>(5)</span></span>
-					<a href="#add-review" data-toggle="modal">Добавить отзыв</a>
+				<div class="col-xs-12 col-md-6">
+					<div class="input">
+						<input class="animated-placeholder" type="text" id="shiping-name" name="shiping-name" required placeholder="Имя" />
+						<label for="shiping-name"></label>
+					</div>
+					<div class="input">
+						<input class="animated-placeholder" type="text" id="shiping-name2" name="shiping-name2" placeholder="Фамилия" />
+						<label for="shiping-name2"></label>
+					</div>
+					<div class="input">
+						<input class="animated-placeholder" type="tel" id="shiping-phone" name="shiping-phone" required placeholder="Номер телефона" />
+						<label for="shiping-phone"></label>
+					</div>
+					<div class="input">
+						<input class="animated-placeholder" type="email" id="shiping-email" name="shiping-email" placeholder="E-mail" />
+						<label for="shiping-email"></label>
+					</div>
+				</div>
+				<div class="col-xs-12 col-md-6">
+					<div class="input">
+						<input class="animated-placeholder" type="text" id="shiping-street" name="shiping-street" placeholder="Улица" />
+						<label for="shiping-street"></label>
+					</div>
+					<div class="input">
+						<div>
+							<input class="animated-placeholder" type="text" id="shiping-house" name="shiping-house" placeholder="Дом" />
+							<label for="shiping-house"></label>
+						</div>
+						<div>
+							<input class="animated-placeholder" type="text" id="shiping-room" name="shiping-room" placeholder="Квартира" />
+							<label for="shiping-room"></label>
+						</div>
+					</div>
+					<div class="input">
+						<div>
+							<input class="animated-placeholder" type="text" id="shiping-city" name="shiping-city" placeholder="Город" />
+							<label for="shiping-city"></label>
+						</div>
+						<div>
+							<input class="animated-placeholder" type="text" id="shiping-district" name="shiping-district" placeholder="Район" />
+							<label for="shiping-district"></label>
+						</div>
+					</div>
+					<div class="input">
+						<input class="animated-placeholder" type="text" id="shiping-state" name="shiping-state" placeholder="Край/Область" />
+						<label for="shiping-state"></label>
+					</div>
 				</div>
 			</div>
-			<div class="modal fade" id="add-review">
-				<div class="modal-dialog">
-					<form action="" method="POST" class="modal-content animated-placeholder">
-						<div class="modal-header">Ваш отзыв</div>
-						<div class="modal-body">
-							<div class="input">
-								<input class="animated-placeholder" type="text" id="add-review-name" name="add-review-name" required placeholder="Имя" />
-								<label for="add-review-name"></label>
-							</div>
-							<div class="input">
-								<input class="animated-placeholder" type="tel" id="add-review-phone" name="add-review-phone" required placeholder="Номер телефона" />
-								<label for="add-review-phone"></label>
-							</div>
-							<div class="input">
-								<input class="animated-placeholder" type="email" id="add-review-email" name="add-review-email" placeholder="E-mail">
-								<label for="add-review-email"></label>
-							</div>
-							<div class="input">
-								<textarea class="animated-placeholder" name="add-review-text" id="add-review-text" required placeholder="Отзыв"></textarea>
-								<label for="add-review-text"></label>
-							</div>
-						</div>
-						<div class="modal-footer">
-							<div class="submit-result">Спасибо! Ваше сообщение было отправлено.</div>
-							<input type="submit" value="Отправить" />
-						</div>
-					</form>
+			<h3>Способ доставки</h3>
+			<div class="row">
+				<div class="col-xs-12 col-md-6">
+					<input type="radio" id="shiping-variant-courier" name="shiping-variant" value="Курьером" checked />
+					<label for="shiping-variant-courier"></label>
+				</div>
+				<div class="col-xs-12 col-md-6">
+					<input type="radio" id="shiping-variant-self" name="shiping-variant" value="Самовывоз" />
+					<label for="shiping-variant-self"></label>
 				</div>
 			</div>
+			<h3>Способ оплаты</h3>
 			<div class="row">
-				<ul class="col-xs-12">
-					<li>
-						<div class="review-header">
-							<div class="row">
-								<div class="col-xs-10"><p>Татьяна, Москва</p></div>
-								<div class="col-xs-2"><p>10.12.2015</p></div>
-							</div>
-						</div>
-						<div class="review-body">
-							<div class="row">
-								<div class="col-xs-10">
-									<p>Флюид против первых морщин Инициатик 40 мл. Разглаживасет, увлажняет. защищает. Флюид против первых морщин Инициатик 40 мл. Разглаживасет, увлажняет. защищает. Флюид против первых морщин Инициатик 40 мл. Разглаживасет, увлажняет. защищает.Флюид против первых морщин Инициатик 40 мл. Разглаживасет, увлажняет. защищает.Флюид против первых морщин Инициатик 40 мл.</p>
-								</div>
-								<div class="col-xs-2">
-									<div class="stars" data-stars-count="1"></div>
-								</div>
-							</div>
-						</div>
-					</li>
-					<li>
-						<div class="review-header">
-							<div class="row">
-								<div class="col-xs-10"><p>Татьяна, Москва</p></div>
-								<div class="col-xs-2"><p>10.12.2015</p></div>
-							</div>
-						</div>
-						<div class="review-body">
-							<div class="row">
-								<div class="col-xs-10">
-									<p>Флюид против первых морщин Инициатик 40 мл. Разглаживасет, увлажняет. защищает. Флюид против первых морщин Инициатик 40 мл. Разглаживасет, увлажняет. защищает. Флюид против первых морщин Инициатик 40 мл. Разглаживасет, увлажняет. защищает.Флюид против первых морщин Инициатик 40 мл. Разглаживасет, увлажняет. защищает.Флюид против первых морщин Инициатик 40 мл.</p>
-								</div>
-								<div class="col-xs-2">
-									<div class="stars" data-stars-count="2"></div>
-								</div>
-							</div>
-						</div>
-					</li>
-					<li>
-						<div class="review-header">
-							<div class="row">
-								<div class="col-xs-10"><p>Татьяна, Москва</p></div>
-								<div class="col-xs-2"><p>10.12.2015</p></div>
-							</div>
-						</div>
-						<div class="review-body">
-							<div class="row">
-								<div class="col-xs-10">
-									<p>Флюид против первых морщин Инициатик 40 мл. Разглаживасет, увлажняет. защищает. Флюид против первых морщин Инициатик 40 мл. Разглаживасет, увлажняет. защищает. Флюид против первых морщин Инициатик 40 мл. Разглаживасет, увлажняет. защищает.Флюид против первых морщин Инициатик 40 мл. Разглаживасет, увлажняет. защищает.Флюид против первых морщин Инициатик 40 мл.</p>
-								</div>
-								<div class="col-xs-2">
-									<div class="stars" data-stars-count="3"></div>
-								</div>
-							</div>
-						</div>
-					</li>
-				</ul>
-			</div>
-			<div class="row">
-				<div class="col-xs-12 pager"><span class="next"><a href="#">Показать еще</a></span></div>
+				<div class="col-xs-12 col-md-6">
+					<input type="radio" id="payment-variant-courier" name="payment-variant" value="Наличными" />
+					<label for="payment-variant-courier"></label>
+				</div>
+				<div class="col-xs-12 col-md-6">
+					<input type="radio" id="payment-variant-self" name="payment-variant" value="Картой" checked />
+					<label for="payment-variant-self"></label>
+				</div>
 			</div>
 		</div>
-	</div>
+		<div class="col-xs-12 vertical-line"></div>
+		<div class="col-xs-9"><input type="button" class="back" value="Вернуться"></div>
+		<div class="col-xs-3"><input type="submit" value="Оформить заказ"></div>
+	</form>
 	<div class="row">
 		<div class="col-xs-12 heading"><span>Товары, которые Вы недавно смотрели</span></div>
 	</div>
@@ -484,6 +426,14 @@
 				<a href="javascript:void(0);" class="to-the-cart"></a>
 			</div>
 		</div>
+	</div>
+	<div class="row pagination-row">
+		<ul class="pagination">
+			<li class="active"><a href="#">1</a></li>
+			<li><a href="#">2</a></li>
+			<li><a href="#">3</a></li>
+			<li><a href="#">4</a></li>
+		</ul>
 	</div>
 </div>
 <!-- footer -->

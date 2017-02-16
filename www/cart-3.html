@@ -239,7 +239,7 @@
 	</nav>
 </header>
 <!-- /header -->
-<div class="container content product">
+<div class="container content cart">
 	<div class="row">
 		<div class="col-xs-6"></div>
 		<div class="col-xs-6 free-shiping free-shiping-2">
@@ -255,159 +255,168 @@
 	</div>
 	<div class="row">
 		<div class="col-xs-12">
-			<div class="ol breadcrumb" style="margin-bottom: 12px;">
-				<li><a href="#">Хлебные крошки</a></li>
-				<li><a href="#">Хлебные крошки</a></li>
-				<li><a href="#">Хлебные крошки</a></li>
-				<li><a href="#">Хлебные крошки</a></li>
-				<li><a href="#">Хлебные крошки</a></li>
-				<li><a href="#">Хлебные крошки</a></li>
-				<li><a href="#">Хлебные крошки</a></li>
-				<li><a href="#">Хлебные крошки</a></li>
-				<li class="active">Хлебные крошки (уровень 1)</li>
+			<div class="ol breadcrumb">
+				<li><a href="#">Главная</a></li>
+				<li class="active">Корзина</li>
 			</div>
 		</div>
 	</div>
 	<div class="row">
+		<div class="col-xs-12 stages">
+			<div>Корзина</div>
+			<div></div>
+			<div>Доставка/Оплата</div>
+			<div></div>
+			<div class="active">Подтверждение</div>
+		</div>
+	</div>
+	<form id="order-step3" action="" method="POST" class="row animated-placeholder">
 		<div class="col-xs-12">
-			<h1>blanco germany (silver delux style) - кран железный delux style артикул if456 AM на разъём 10 дюймов</h1>
+			<table>
+				<thead>
+					<tr>
+						<th>Пор.<br>номер</th>
+						<th>Фото</th>
+						<th>Наименование</th>
+						<th>Общие<br>характеристики</th>
+						<th>Кол-во</th>
+						<th>Стоимость<br>товара</th>
+						<th>Сумма<br>(со скидкой)</th>
+						<th>Действие</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>1</td>
+						<td><img src="images/product-image.jpg" alt="Изображение товара"></td>
+						<td>Инициатик 40 мл. Разглаживасет, увлажняет. защищает.</td>
+						<td>
+							<ul>
+								<li>40 мл.</li>
+								<li>Фиолетовый, деревянная основа</li>
+								<li>крепление на металлические болты</li>
+								<li>Водоотталкивающее покрытие</li>
+							</ul>
+						</td>
+						<td>1</td>
+						<td>3593.37</td>
+						<td>
+							<div class="special-price">3597.37</div>
+							<div class="old-price">3597.37 <span>руб</span></div>
+						</td>
+						<td>
+							<a href="#" class="trash">
+								<svg version="1.1" id="trash-ico" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="328.48px" height="392px" viewBox="0 0 328.48 392" enable-background="new 0 0 328.48 392" xml:space="preserve">
+								<g>
+									<path fill="#54545A" d="M320.16,50h-94.719V8.32c0-4.64-3.762-8.32-8.32-8.32H111.359c-4.64,0-8.32,3.762-8.32,8.32V50H8.32
+										C3.68,50,0,53.762,0,58.32v51.918c0,4.641,3.762,8.321,8.32,8.321H28V330.32c0,34,27.68,61.68,61.68,61.68h149.121
+										c34,0,61.68-27.68,61.68-61.68V118.641h19.68c4.641,0,8.32-3.762,8.32-8.321v-52C328.48,53.762,324.719,50,320.16,50L320.16,50z
+										 M119.762,16.719h89.039v33.359h-89.039V16.719z M283.762,330.32c0,24.801-20.16,44.961-44.961,44.961H89.68
+										c-24.801,0-44.961-20.16-44.961-44.961V118.641h239.043V330.32z M311.762,101.922H16.719V66.719H311.84v35.203H311.762z
+										 M311.762,101.922"/>
+									<path fill="#54545A" d="M90.719,332.801c4.64,0,8.32-3.762,8.32-8.32V169.52c0-4.641-3.758-8.321-8.32-8.321
+										c-4.641,0-8.321,3.762-8.321,8.321v154.96C82.398,329.039,86.16,332.801,90.719,332.801L90.719,332.801z M90.719,332.801"/>
+									<path fill="#54545A" d="M164.238,332.801c4.641,0,8.321-3.762,8.321-8.32V169.52c0-4.641-3.758-8.321-8.321-8.321
+										c-4.558,0-8.316,3.762-8.316,8.321v154.96C155.922,329.039,159.602,332.801,164.238,332.801L164.238,332.801z M164.238,332.801"/>
+									<path fill="#54545A" d="M237.762,332.801c4.637,0,8.316-3.762,8.316-8.32V169.52c0-4.641-3.758-8.321-8.316-8.321
+										c-4.641,0-8.32,3.762-8.32,8.321v154.96C229.359,329.039,233.121,332.801,237.762,332.801L237.762,332.801z M237.762,332.801"/>
+								</g>
+								</svg>
+							</a>
+						</td>
+					</tr>
+					<tr>
+						<td>2</td>
+						<td><img src="images/product-image.jpg" alt="Изображение товара"></td>
+						<td>Инициатик 40 мл. Разглаживасет, увлажняет. защищает.</td>
+						<td>
+							<ul>
+								<li>40 мл.</li>
+								<li>Фиолетовый, деревянная основа</li>
+								<li>крепление на металлические болты</li>
+								<li>Водоотталкивающее покрытие</li>
+							</ul>
+						</td>
+						<td>22</td>
+						<td>3593.37</td>
+						<td>
+							<div class="special-price">3597.37</div>
+							<div class="old-price">3597.37 <span>руб</span></div>
+						</td>
+						<td>
+							<a href="#" class="trash">
+								<svg version="1.1" id="trash-ico" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="328.48px" height="392px" viewBox="0 0 328.48 392" enable-background="new 0 0 328.48 392" xml:space="preserve">
+								<g>
+									<path fill="#54545A" d="M320.16,50h-94.719V8.32c0-4.64-3.762-8.32-8.32-8.32H111.359c-4.64,0-8.32,3.762-8.32,8.32V50H8.32
+										C3.68,50,0,53.762,0,58.32v51.918c0,4.641,3.762,8.321,8.32,8.321H28V330.32c0,34,27.68,61.68,61.68,61.68h149.121
+										c34,0,61.68-27.68,61.68-61.68V118.641h19.68c4.641,0,8.32-3.762,8.32-8.321v-52C328.48,53.762,324.719,50,320.16,50L320.16,50z
+										 M119.762,16.719h89.039v33.359h-89.039V16.719z M283.762,330.32c0,24.801-20.16,44.961-44.961,44.961H89.68
+										c-24.801,0-44.961-20.16-44.961-44.961V118.641h239.043V330.32z M311.762,101.922H16.719V66.719H311.84v35.203H311.762z
+										 M311.762,101.922"/>
+									<path fill="#54545A" d="M90.719,332.801c4.64,0,8.32-3.762,8.32-8.32V169.52c0-4.641-3.758-8.321-8.32-8.321
+										c-4.641,0-8.321,3.762-8.321,8.321v154.96C82.398,329.039,86.16,332.801,90.719,332.801L90.719,332.801z M90.719,332.801"/>
+									<path fill="#54545A" d="M164.238,332.801c4.641,0,8.321-3.762,8.321-8.32V169.52c0-4.641-3.758-8.321-8.321-8.321
+										c-4.558,0-8.316,3.762-8.316,8.321v154.96C155.922,329.039,159.602,332.801,164.238,332.801L164.238,332.801z M164.238,332.801"/>
+									<path fill="#54545A" d="M237.762,332.801c4.637,0,8.316-3.762,8.316-8.32V169.52c0-4.641-3.758-8.321-8.316-8.321
+										c-4.641,0-8.32,3.762-8.32,8.321v154.96C229.359,329.039,233.121,332.801,237.762,332.801L237.762,332.801z M237.762,332.801"/>
+								</g>
+								</svg>
+							</a>
+						</td>
+					</tr>
+					<tr>
+						<td>3</td>
+						<td><img src="images/product-image.jpg" alt="Изображение товара"></td>
+						<td>Инициатик 40 мл. Разглаживасет, увлажняет. защищает.</td>
+						<td>
+							<ul>
+								<li>40 мл.</li>
+								<li>Фиолетовый, деревянная основа</li>
+								<li>крепление на металлические болты</li>
+								<li>Водоотталкивающее покрытие</li>
+							</ul>
+						</td>
+						<td>3</td>
+						<td>3593.37</td>
+						<td>
+							<div class="special-price">3597.37</div>
+							<div class="old-price">3597.37 <span>руб</span></div>
+						</td>
+						<td>
+							<a href="#" class="trash">
+								<svg version="1.1" id="trash-ico" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="328.48px" height="392px" viewBox="0 0 328.48 392" enable-background="new 0 0 328.48 392" xml:space="preserve">
+								<g>
+									<path fill="#54545A" d="M320.16,50h-94.719V8.32c0-4.64-3.762-8.32-8.32-8.32H111.359c-4.64,0-8.32,3.762-8.32,8.32V50H8.32
+										C3.68,50,0,53.762,0,58.32v51.918c0,4.641,3.762,8.321,8.32,8.321H28V330.32c0,34,27.68,61.68,61.68,61.68h149.121
+										c34,0,61.68-27.68,61.68-61.68V118.641h19.68c4.641,0,8.32-3.762,8.32-8.321v-52C328.48,53.762,324.719,50,320.16,50L320.16,50z
+										 M119.762,16.719h89.039v33.359h-89.039V16.719z M283.762,330.32c0,24.801-20.16,44.961-44.961,44.961H89.68
+										c-24.801,0-44.961-20.16-44.961-44.961V118.641h239.043V330.32z M311.762,101.922H16.719V66.719H311.84v35.203H311.762z
+										 M311.762,101.922"/>
+									<path fill="#54545A" d="M90.719,332.801c4.64,0,8.32-3.762,8.32-8.32V169.52c0-4.641-3.758-8.321-8.32-8.321
+										c-4.641,0-8.321,3.762-8.321,8.321v154.96C82.398,329.039,86.16,332.801,90.719,332.801L90.719,332.801z M90.719,332.801"/>
+									<path fill="#54545A" d="M164.238,332.801c4.641,0,8.321-3.762,8.321-8.32V169.52c0-4.641-3.758-8.321-8.321-8.321
+										c-4.558,0-8.316,3.762-8.316,8.321v154.96C155.922,329.039,159.602,332.801,164.238,332.801L164.238,332.801z M164.238,332.801"/>
+									<path fill="#54545A" d="M237.762,332.801c4.637,0,8.316-3.762,8.316-8.32V169.52c0-4.641-3.758-8.321-8.316-8.321
+										c-4.641,0-8.32,3.762-8.32,8.321v154.96C229.359,329.039,233.121,332.801,237.762,332.801L237.762,332.801z M237.762,332.801"/>
+								</g>
+								</svg>
+							</a>
+						</td>
+					</tr>
+				</tbody>
+			</table>
 		</div>
-		<div class="col-xs-12 art">Артикул: 4680001872484</div>
-		<div class="col-xs-5">
-			<div class="product-images">
-				<div class="main-image">
-					<!-- Большое изображение будет загружаться сюда с помощью JS. Заполнятйе только mini-images. Выбирайте изображения побольше -->
-					<img src="" alt="" data-zoom-image="" />
-				</div>
-				<div class="mini-images">
-					<div class="mini-image"><img src="images/product-image-big.jpg" alt="Товар - изображение 1"></div>
-					<div class="mini-image"><img src="images/product-image.jpg" alt="Товар - изображение 2"></div>
-					<div class="mini-image"><img src="images/category4.jpg" alt="Товар - изображение 3"></div>
-					<div class="mini-image"><img src="images/category5.jpg" alt="Товар - изображение 4"></div>
-					<div class="mini-image"><img src="images/product-image.jpg" alt="Товар - изображение 5"></div>
-				</div>
-			</div>
+		<div class="col-xs-12 order-description">
+			<h3>Данные заказа</h3>
+			<div>Иванов Федор Петрович</div>
+			<div>wdcs@sdx.sd</div>
+			<div>+7 (465) 456 45 65</div>
+			<div>Пункт выдачи: г. Хабаровск ул. Краснореченская, д. 100</div>
 		</div>
-		<div class="col-xs-7">
-			<div class="product-description">
-				<p>Флюид против первых морщин Инициатик 40 мл. Разглаживает, увлажняет. защищает. Флюид против первых морщин Инициатик 40 мл. Разглаживает, увлажняет. защищает. Флюид против первых морщин Инициатик 40 мл. Разглаживает, увлажняет. защищает.Флюид против первых морщин Инициатик 40 мл. Разглаживает, увлажняет. защищает.Флюид против первых морщин Инициатик 40 мл. Разглаживает, увлажняет. защищает. Разглаживает, увлажняет. защищает.</p>
-			</div>
-			<div class="count">
-				<label for="product-count-input">кол-во</label>
-				<input id="product-count-input" type="number" min="1" max="999" step="1" value="1" />
-			</div>
-			<div class="price">
-				<div>
-					<!--<div>3593.37 <span>руб</span></div> Normal price -->
-					<div class="special-price">3593.37 <span>руб</span></div><!-- Special price -->
-					<div class="old-price">3593.37 <span>руб</span></div><!-- Old price -->
-				</div>
-			</div>
-			<div class="buy-button">
-				<a href="#">Купить</a>
-			</div>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-xs-12 reviews">
-			<div class="row">
-				<div class="col-xs-12 heading">
-					<span>Отзывы о товаре <span>(5)</span></span>
-					<a href="#add-review" data-toggle="modal">Добавить отзыв</a>
-				</div>
-			</div>
-			<div class="modal fade" id="add-review">
-				<div class="modal-dialog">
-					<form action="" method="POST" class="modal-content animated-placeholder">
-						<div class="modal-header">Ваш отзыв</div>
-						<div class="modal-body">
-							<div class="input">
-								<input class="animated-placeholder" type="text" id="add-review-name" name="add-review-name" required placeholder="Имя" />
-								<label for="add-review-name"></label>
-							</div>
-							<div class="input">
-								<input class="animated-placeholder" type="tel" id="add-review-phone" name="add-review-phone" required placeholder="Номер телефона" />
-								<label for="add-review-phone"></label>
-							</div>
-							<div class="input">
-								<input class="animated-placeholder" type="email" id="add-review-email" name="add-review-email" placeholder="E-mail">
-								<label for="add-review-email"></label>
-							</div>
-							<div class="input">
-								<textarea class="animated-placeholder" name="add-review-text" id="add-review-text" required placeholder="Отзыв"></textarea>
-								<label for="add-review-text"></label>
-							</div>
-						</div>
-						<div class="modal-footer">
-							<div class="submit-result">Спасибо! Ваше сообщение было отправлено.</div>
-							<input type="submit" value="Отправить" />
-						</div>
-					</form>
-				</div>
-			</div>
-			<div class="row">
-				<ul class="col-xs-12">
-					<li>
-						<div class="review-header">
-							<div class="row">
-								<div class="col-xs-10"><p>Татьяна, Москва</p></div>
-								<div class="col-xs-2"><p>10.12.2015</p></div>
-							</div>
-						</div>
-						<div class="review-body">
-							<div class="row">
-								<div class="col-xs-10">
-									<p>Флюид против первых морщин Инициатик 40 мл. Разглаживасет, увлажняет. защищает. Флюид против первых морщин Инициатик 40 мл. Разглаживасет, увлажняет. защищает. Флюид против первых морщин Инициатик 40 мл. Разглаживасет, увлажняет. защищает.Флюид против первых морщин Инициатик 40 мл. Разглаживасет, увлажняет. защищает.Флюид против первых морщин Инициатик 40 мл.</p>
-								</div>
-								<div class="col-xs-2">
-									<div class="stars" data-stars-count="1"></div>
-								</div>
-							</div>
-						</div>
-					</li>
-					<li>
-						<div class="review-header">
-							<div class="row">
-								<div class="col-xs-10"><p>Татьяна, Москва</p></div>
-								<div class="col-xs-2"><p>10.12.2015</p></div>
-							</div>
-						</div>
-						<div class="review-body">
-							<div class="row">
-								<div class="col-xs-10">
-									<p>Флюид против первых морщин Инициатик 40 мл. Разглаживасет, увлажняет. защищает. Флюид против первых морщин Инициатик 40 мл. Разглаживасет, увлажняет. защищает. Флюид против первых морщин Инициатик 40 мл. Разглаживасет, увлажняет. защищает.Флюид против первых морщин Инициатик 40 мл. Разглаживасет, увлажняет. защищает.Флюид против первых морщин Инициатик 40 мл.</p>
-								</div>
-								<div class="col-xs-2">
-									<div class="stars" data-stars-count="2"></div>
-								</div>
-							</div>
-						</div>
-					</li>
-					<li>
-						<div class="review-header">
-							<div class="row">
-								<div class="col-xs-10"><p>Татьяна, Москва</p></div>
-								<div class="col-xs-2"><p>10.12.2015</p></div>
-							</div>
-						</div>
-						<div class="review-body">
-							<div class="row">
-								<div class="col-xs-10">
-									<p>Флюид против первых морщин Инициатик 40 мл. Разглаживасет, увлажняет. защищает. Флюид против первых морщин Инициатик 40 мл. Разглаживасет, увлажняет. защищает. Флюид против первых морщин Инициатик 40 мл. Разглаживасет, увлажняет. защищает.Флюид против первых морщин Инициатик 40 мл. Разглаживасет, увлажняет. защищает.Флюид против первых морщин Инициатик 40 мл.</p>
-								</div>
-								<div class="col-xs-2">
-									<div class="stars" data-stars-count="3"></div>
-								</div>
-							</div>
-						</div>
-					</li>
-				</ul>
-			</div>
-			<div class="row">
-				<div class="col-xs-12 pager"><span class="next"><a href="#">Показать еще</a></span></div>
-			</div>
-		</div>
-	</div>
+		<div class="col-xs-12 vertical-line"></div>
+		<div class="col-xs-9"><input type="button" class="back" value="Вернуться"></div>
+		<div class="col-xs-3"><input type="submit" value="Подтвердить"></div>
+	</form>
 	<div class="row">
 		<div class="col-xs-12 heading"><span>Товары, которые Вы недавно смотрели</span></div>
 	</div>
@@ -484,6 +493,14 @@
 				<a href="javascript:void(0);" class="to-the-cart"></a>
 			</div>
 		</div>
+	</div>
+	<div class="row pagination-row">
+		<ul class="pagination">
+			<li class="active"><a href="#">1</a></li>
+			<li><a href="#">2</a></li>
+			<li><a href="#">3</a></li>
+			<li><a href="#">4</a></li>
+		</ul>
 	</div>
 </div>
 <!-- footer -->
