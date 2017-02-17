@@ -2172,15 +2172,9 @@ img.float-right {
 	margin-bottom: 33px;
 }
 #order-step2 input[id="shiping-variant-courier"] + label .checkbox-content > div:nth-child(1) .ico {
-	background: url('../images/shiping-variant-ico-1.png') no-repeat center center;
-	width: 90px;
-	height: 61px;
 	margin-right: 20px;
 }
 #order-step2 input[id="shiping-variant-self"] + label .checkbox-content > div:nth-child(1) .ico {
-	background: url('../images/shiping-variant-ico-2.png') no-repeat center center;
-	width: 66px;
-	height: 66px;
 	margin-right: 20px;
 }
 #order-step2 input[id*="shiping-variant"] + label .checkbox-content > div:nth-child(1) span {
@@ -2202,6 +2196,7 @@ img.float-right {
 	text-decoration: none;
 	border-radius: 2px;
 	border: none;
+	margin-bottom: 35px;
 }
 	#order-step2 input[id="shiping-variant-self"]:checked + label .checkbox-content a {
 		background: #DB4248;
@@ -2216,32 +2211,121 @@ img.float-right {
 	margin-bottom: 35px;
 	position: relative;
 }
-	#order-step2 input[id="shiping-variant-courier"]:checked + label .checkbox-content > div:nth-child(2) {
-		color: #231F20;
-	}
-#order-step2 input[id="shiping-variant-courier"] + label .checkbox-content > div:nth-child(3) {
+#order-step2 input[id="payment-variant-cash"] + label .checkbox-content > div,
+#order-step2 input[id="payment-variant-card"]+ label .checkbox-content > div {
 	color: #BABABA;
 	font-size: 16.84px;
 }
-	#order-step2 input[id="shiping-variant-courier"]:checked + label .checkbox-content > div:nth-child(3) {
+	#order-step2 input[id="shiping-variant-courier"]:checked + label .checkbox-content > div:nth-child(2),
+	#order-step2 input[id="payment-variant-cash"]:checked + label .checkbox-content > div,
+	#order-step2 input[id="payment-variant-card"]:checked + label .checkbox-content > div {
 		color: #231F20;
 	}
-	#order-step2 input[id="shiping-variant-courier"] + label .checkbox-content > div:nth-child(3) span {
+#order-step2 input[id="shiping-variant-courier"] + label .checkbox-content > div:nth-child(3),
+#order-step2 input[id="shiping-variant-self"] + label .checkbox-content > div:nth-child(3) {
+	color: #BABABA;
+	font-size: 16.84px;
+}
+	#order-step2 input[id="shiping-variant-courier"]:checked + label .checkbox-content > div:nth-child(3),
+	#order-step2 input[id="shiping-variant-self"]:checked + label .checkbox-content > div:nth-child(3) {
+		color: #231F20;
+	}
+	#order-step2 input[id="shiping-variant-courier"] + label .checkbox-content > div:nth-child(3) span,
+	#order-step2 input[id="shiping-variant-self"] + label .checkbox-content > div:nth-child(3) span {
 		font-size: 24px;
 		vertical-align: middle;
 	}
-	#order-step2 input[id="shiping-variant-courier"]:checked + label .checkbox-content > div:nth-child(3) span {
+	#order-step2 input[id="shiping-variant-courier"]:checked + label .checkbox-content > div:nth-child(3) span,
+	#order-step2 input[id="shiping-variant-self"]:checked + label .checkbox-content > div:nth-child(3) span {
 		color: #DB4248;
 	}
-#order-step2 input[id="shiping-variant-courier"] + label .checkbox-content > div:nth-child(2) input {
+#order-step2 input[id="shiping-variant-courier"] + label .checkbox-content > div:nth-child(2) input,
+#order-step2 input[id="shiping-variant-courier"] + label .checkbox-content > div:nth-child(2) select {
 	display: inline-block;
 	width: 45%;
 	height: 32px;
 	border: 2px solid #E7ECF0;
+	border-radius: 2px;
 }
+
+#order-step2 input[id="payment-variant-cash"] + label .checkbox-content,
+#order-step2 input[id="payment-variant-card"] + label .checkbox-content {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 100%;
+	padding-bottom: 4px;
+}
+#order-step2 input[id="payment-variant-cash"] + label .checkbox-content {
+	padding-top: 16px;
+}
+#order-step2 input[id="payment-variant-card"] + label .checkbox-content {
+	padding-top: 24px;
+}
+#shiping-courier-ico {
+	width: 90px;
+	height: 61px;
+}
+#shiping-self-ico {
+	width: 66px;
+	height: 66px;
+}
+#payment-cash-ico {
+	width: 83px;
+	height: 72px;
+}
+#payment-card-ico {
+	width: 80px;
+	height: 59px;
+}
+	#order-step2 input[id="shiping-variant-courier"]:checked + label path,
+	#order-step2 input[id="shiping-variant-self"]:checked + label path,
+	#order-step2 input[id="payment-variant-cash"]:checked + label path,
+	#order-step2 input[id="payment-variant-card"]:checked + label path {
+		fill: #DB4248;
+	}
 .ui-datepicker-trigger {
 	position: absolute;
 	left: calc(40% - 6px);
 	bottom: 6px;
 	cursor: pointer;
 }
+#timepicker {
+	position: relative;
+	display: inline-block;
+	width: 80px;
+}
+	#timepicker select{
+		-moz-appearance: none;
+		text-indent: 0.01px; 
+		text-overflow: '';
+		-ms-appearance: none;
+		appearance: none!important;
+		width: 100% !important;
+		background: url('../images/timepicker-ico.svg') no-repeat 60px 10px #FFFFFF;
+		background-size: 8px;
+	}
+.banknote {
+	display: none;
+	position: absolute;
+	width: 140px;
+	right: 35px;
+	top: 0;
+	padding-top: 30px;
+}
+	.banknote label {
+		font-weight: normal;
+	}
+	.banknote input {
+		display: inline-block;
+		width: 100%;
+		height: 32px;
+		border: 2px solid #E7ECF0 !important;
+		border-radius: 2px;
+	}
+#order-step2 input[id="payment-variant-cash"]:checked + label .banknote {
+	display: block;
+}
+	#order-step2 input[id="payment-variant-cash"]:checked + label .banknote label {
+		color: #231F20;
+	}
