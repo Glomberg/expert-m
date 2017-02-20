@@ -37,6 +37,13 @@ $(document).ready(function(){
 			if($(".basket-details-body .item .title").length >= 1) { $(".basket-details-body .item .title").dotdotdot(); }
 		}
 	});
+	$(document).click( function(event){
+		if($('.header-basket-col .basket-details').is(':visible')) {
+			if( $(event.target).closest('.basket-details, .basket').length ) return;
+			$('.header-basket-col .basket-details').slideUp();
+			event.stopPropagation();
+		}
+	});
 	// Sticky menu
 	if($(document).scrollTop() > 115) {
 		fix_menu_on()
@@ -88,7 +95,6 @@ $(document).ready(function(){
 		$("input#max-cost").change(function(){
 			var value1=$("input#min-cost").val();
 			var value2=$("input#max-cost").val();
-			if (value2 > 1000) { value2 = 1000; $("input#max-cost").val(1000)}
 			if(parseInt(value1) > parseInt(value2)){
 				value2 = value1;
 				$("input#max-cost").val(value2);
