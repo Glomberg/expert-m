@@ -77,6 +77,9 @@ a {
 .modal-dialog {
 	width: 33.33%;
 }
+#select-outpost-modal .modal-dialog {
+	width: 1140px;
+}
 .modal-content {
 	border-radius: 0;
 }
@@ -100,6 +103,9 @@ a {
 	padding: 20px 20px;
 	display: flex;
 	justify-content: space-between;
+}
+#select-outpost-modal .modal-footer {
+	display: block;
 }
 .modal {
 	color: #7C878F;
@@ -2118,7 +2124,7 @@ img.float-right {
 	float:left;
 	width: 25%;
 }
-#order-step2 .checkbox-ico {
+.checkbox-ico {
 	float:left;
 	width: 20%;
 	height: 100%;
@@ -2126,14 +2132,14 @@ img.float-right {
 	justify-content: center;
 	align-items: center;
 }
-	#order-step2 .checkbox-ico > div {
+	.checkbox-ico > div {
 		width: 42px;
 		height: 42px;
 		border-radius: 50%;
 		background: #DDEAF2;
 		position: relative;
 	}
-	#order-step2 .checkbox-ico > div:before {
+	.checkbox-ico > div:before {
 		content: '';
 		width: 100%;
 		height: 100%;
@@ -2329,3 +2335,95 @@ img.float-right {
 	#order-step2 input[id="payment-variant-cash"]:checked + label .banknote label {
 		color: #231F20;
 	}
+	
+#map {
+	height: 500px;
+}
+#select-outpost-modal .checkboxes .scroll-pane {
+	height: 500px;
+	width: 100%;
+	padding-right: 16px;
+	overflow: auto;
+}
+#select-outpost-modal .checkboxes input {
+	display: none;
+}
+#select-outpost-modal .checkboxes label {
+	display: block;
+	background: #F7F7F7;
+	border-radius: 2px;
+	border: 3px solid #F7F7F7;
+	color: #8B8B8B;
+	font-size: 16px;
+	margin-bottom: 10px;
+	padding: 10px;
+	padding-left: 90px;
+	cursor: pointer;
+	font-weight: normal;
+	position: relative;
+}
+#select-outpost-modal .checkboxes label:before {
+	
+}
+#select-outpost-modal .checkboxes input:checked + label {
+	color: #303033;
+	border: 3px solid #87D1FF;
+}
+	#select-outpost-modal .checkboxes label .outpost-title {
+		font-size: 18.95px;
+	}
+	#select-outpost-modal .checkboxes label .outpost-info {
+		display: inline-block;
+		width: 55%;
+		padding-top: 10px;
+	}
+	#select-outpost-modal .checkboxes label .outpost-phones {
+		display: inline-block;
+		width: 43%;
+		vertical-align: top;
+		font-size: 18.95px;
+		padding-top: 10px;
+	}
+#select-outpost-modal button {
+	background: #DB4248;
+	border-radius: 2px;
+	position: relative;
+	font-size: 16px;
+	color: #FFFFFF;
+	padding: 8px 15px;
+	border: none;
+	width: 100%;
+	height: 32px;
+	margin-bottom: 0;
+	transition: opacity 0.3s ease-in-out;
+}
+#select-outpost-modal button.show-on-the-map {
+	background: #8B8B8B;
+}
+#select-outpost-modal button:hover {
+	opacity: 0.75;
+}
+#select-outpost-modal .checkbox-ico {
+	float: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 90px;
+}
+	#select-outpost-modal .checkboxes input:checked + label .checkbox-ico > div:before {
+		visibility: visible;
+		-webkit-transform: scaleX(1);
+		-ms-transform: scaleX(1);
+		transform: scaleX(1);
+	}
+.jspVerticalBar {
+	border-radius: 2px;
+}
+.jspTrack {
+	background: #EDEDED;
+	border-radius: 2px;
+}
+.jspDrag {
+	background: #DB4248;
+	border-radius: 2px;
+}

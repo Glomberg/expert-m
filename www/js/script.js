@@ -28,8 +28,6 @@ $(document).ready(function(){
 			}
 		});
 	}
-	// Masked input
-	//$('.modal input[type="tel"]').mask("+7(999)999-9999");
 	// Mini-Cart opener
 	$('.header-basket-col .basket').on('click', function(){
 		if($('.header-basket-col .basket-details').is(':visible')) {
@@ -209,5 +207,57 @@ $(document).ready(function(){
 			buttonImageOnly: true,
 			buttonText: "Выберите дату"
 		},$.datepicker.regional['ru']));
+	}
+	//jScrollPane
+	$('#select-outpost').on('click', function(){
+		$('#select-outpost-modal').modal('show');
+		setTimeout(function(){
+			$('.scroll-pane').jScrollPane({
+				contentWidth: '0px'
+			});
+		},400);
+	});
+	// Yandex MAP
+	if($('#map').length >= 1) {
+		var adress = [];
+		var shop_count = $('label.shop').length;
+		for(var j = 0; j < shop_count; j++) {
+			var coord_1 = parseFloat($('label.shop:eq(' + j + ')').attr('data-outpost-coordinate-n'));
+			var coord_2 = parseFloat($('label.shop:eq(' + j + ')').attr('data-outpost-coordinate-e'));
+			var key = j + 1;
+			adress['shop' + key] = [coord_1, coord_2];
+		}
+		ymaps.ready(init);
+		function init() {
+			var myMap;     
+			myMap = new ymaps.Map ("map", {
+				center: adress['shop1'],
+				zoom: 15
+			});
+			//метки на карте
+			for(var j = 0; j < shop_count; j++) {
+				var key = j + 1;
+				var title = $('label.shop:eq(' + j + ')').find('.outpost-title').html();
+				var placemark = 'myPlacemark' + key;
+				placemark = new ymaps.Placemark(adress['shop' + key], {
+					hintContent: title,
+					balloonContent: title
+				}, {
+					iconLayout: 'default#image'
+				});
+				myMap.geoObjects.add(placemark);
+			}
+			$('.show-on-the-map').on('click', function(e){
+				e.preventDefault();
+				for(var j = 0; j < shop_count; j++) {
+					if($('label.shop:eq(' + j + ')').siblings('input').is(':checked')) {
+						var key = j + 1;
+						myMap.panTo(adress['shop' + key], {
+							flying: 1
+						});
+					}
+				}
+			});
+		}
 	}
 });

@@ -8,8 +8,11 @@
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
 	<link rel="stylesheet" type="text/css" href="css/waves.min.css" />
 	<link rel="stylesheet" type="text/css" href="adds/jquery-ui/jquery-ui.min.css" />
+	<link rel="stylesheet" type="text/css" href="adds/jScrollPane/jquery.jscrollpane.css" />
 	<link rel="stylesheet" type="text/css" href="css/styles.css" />
 	<link rel="stylesheet" type="text/css" href="css/media.css" />
+	<!--YANDEX MAPS-->
+	<script src="https://api-maps.yandex.ru/2.0-stable/?load=package.standard&lang=ru-RU" type="text/javascript"></script>
 	<!--[if lt IE 9]>
 	   <script>
 		  document.createElement('header');
@@ -446,7 +449,7 @@
 								</div>
 								<span>+0 р</span>
 							</div>
-							<a href="#" id="select-outpost" >Выбрать пункт</a>
+							<a href="#select-outpost-modal" id="select-outpost">Выбрать пункт</a>
 							<div>Стоимость доставки <span>500 р</span></div>
 						</div>
 					</label>
@@ -661,6 +664,75 @@
 		</div>
 	</div>
 </footer>
+<div class="modal fade" id="select-outpost-modal">
+	<div class="modal-dialog modal-lg">
+		<form action="" method="POST" class="modal-content animated-placeholder">
+			<div class="modal-header">Выбор пункта</div> 
+			<div class="modal-body">
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-xs-5">
+							<div id="map"></div>
+						</div>
+						<div class="col-xs-7 checkboxes">
+							<div class="scroll-pane">
+								<div class="outpost-checkbox-item">
+									<input type="radio" name="outpost-radio" id="outpost-1" value="Пункты самовывоза и обслуживания vip клиентов" checked>
+									<label class="shop" for="outpost-1" data-outpost-coordinate-n="48.460146" data-outpost-coordinate-e="135.099145">
+										<div class="checkbox-ico"><div></div></div>
+										<span class="outpost-title">Пункты самовывоза и обслуживания vip клиентов 1</span>
+										<span class="outpost-info">Улица: Проспект 60 лет октября<br>Дом 222 А<br>Время работы: <br>пн-пт 10 00 - 22 00, сб 8 00 - 16 00 <br>вс - выходной</span>
+										<span class="outpost-phones">8 800 000 99 99, <br>8 (4212) 555 000, <br>8 (4212) 555 000</span>
+									</label>
+								</div>
+								<div class="outpost-checkbox-item">
+									<input type="radio" name="outpost-radio" id="outpost-2">
+									<label class="shop" for="outpost-2" data-outpost-coordinate-n="48.465298" data-outpost-coordinate-e="135.181628">
+										<div class="checkbox-ico"><div></div></div>
+										<span class="outpost-title">Пункты самовывоза и обслуживания vip клиентов 2</span>
+										<span class="outpost-info">Улица: Проспект 60 лет октября<br>Дом 222 А<br>Время работы: <br>пн-пт 10 00 - 22 00, сб 8 00 - 16 00 <br>вс - выходной</span>
+										<span class="outpost-phones">8 800 000 99 99, <br>8 (4212) 555 000, <br>8 (4212) 555 000</span>
+									</label>
+								</div>
+								<div class="outpost-checkbox-item">
+									<input type="radio" name="outpost-radio" id="outpost-3">
+									<label class="shop" for="outpost-3" data-outpost-coordinate-n="48.501635" data-outpost-coordinate-e="135.142104">
+										<div class="checkbox-ico"><div></div></div>
+										<span class="outpost-title">Пункты самовывоза и обслуживания vip клиентов 3</span>
+										<span class="outpost-info">Улица: Проспект 60 лет октября<br>Дом 222 А<br>Время работы: <br>пн-пт 10 00 - 22 00, сб 8 00 - 16 00 <br>вс - выходной</span>
+										<span class="outpost-phones">8 800 000 99 99, <br>8 (4212) 555 000, <br>8 (4212) 555 000</span>
+									</label>
+								</div>
+								<div class="outpost-checkbox-item">
+									<input type="radio" name="outpost-radio" id="outpost-4">
+									<label class="shop" for="outpost-4" data-outpost-coordinate-n="48.480184" data-outpost-coordinate-e="135.055244">
+										<div class="checkbox-ico"><div></div></div>
+										<span class="outpost-title">Пункты самовывоза и обслуживания vip клиентов 4</span>
+										<span class="outpost-info">Улица: Проспект 60 лет октября<br>Дом 222 А<br>Время работы: <br>пн-пт 10 00 - 22 00, сб 8 00 - 16 00 <br>вс - выходной</span>
+										<span class="outpost-phones">8 800 000 99 99, <br>8 (4212) 555 000, <br>8 (4212) 555 000</span>
+									</label>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-xs-8"></div>
+						<div class="col-xs-2">
+							<button class="show-on-the-map">На карте</button>
+						</div>
+						<div class="col-xs-2">
+							<button class="select-the-outpost" data-dismiss="modal">Выбрать</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
 <!-- /footer -->
 <script src="js/jquery-3.1.1.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
@@ -669,6 +741,8 @@
 <script src="adds/jquery-ui/jquery-ui.min.js"></script>
 <script src="js/jquery.elevateZoom-3.0.8.min.js"></script>
 <script src="js/jquery.maskedinput.min.js"></script>
+<script src="adds/jScrollPane/jquery.mousewheel.js"></script>
+<script src="adds/jScrollPane/jquery.jscrollpane.min.js"></script>
 <script src="js/script.js"></script>
 </body>
 </html>position: relative;
