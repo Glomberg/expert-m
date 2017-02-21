@@ -12,7 +12,41 @@
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px) {
+	.mobile-menu-trigger { display: block; }
+	.small-nav { display: none; }
+	.header-feedback-col { display: none; }
+	header { padding-top: 140px; padding-bottom: 20px; }
+	.header-logo-col {
+		position: absolute;
+		top: 40px;
+		left: 19%;
+	}
+	.header-basket-col {
+		position: absolute;
+		top: 41px;
+		right: 0;
+	}
+	.header-basket-col .basket .total-price { display: none; }
+	.header-search-col { width: 100%; }
+	.header-phones {font-size: 28px; }
+	header nav {
+		width: 320px;
+		height: auto;
+		min-height: 100%;
+		position: fixed;
+		top: 0;
+		left: -320px;
+		z-index: 3;
+		margin-top: 0;
+	}
+	body.mobile-menu-on {
+		position: relative;
+		overflow: hidden;
+	}
 	
+	.main-nav {
+		flex-direction: column;
+	}
 }
 
 /* Extra Small Devices, Phones */

@@ -24,8 +24,38 @@
 </head>
 <body>
 <!-- header -->
+<div class="modal fade" id="feedback">
+	<div class="modal-dialog">
+		<form action="" method="POST" class="modal-content animated-placeholder">
+			<div class="modal-header">Свяжитесь с нами</div>
+			<div class="modal-body">
+				<div class="input">
+					<input class="animated-placeholder" type="text" id="feedback-name" name="feedback-name" required placeholder="Имя" />
+					<label for="feedback-name"></label>
+				</div>
+				<div class="input">
+					<input class="animated-placeholder" type="tel" id="feedback-phone" name="feedback-phone" required placeholder="Номер телефона" />
+					<label for="feedback-phone"></label>
+				</div>
+				<div class="input">
+					<input class="animated-placeholder" type="email" id="feedback-email" name="feedback-email" placeholder="E-mail">
+					<label for="feedback-email"></label>
+				</div>
+				<div class="input">
+					<textarea class="animated-placeholder" name="feedback-text" id="feedback-text" required placeholder="Текст сообщения"></textarea>
+					<label for="feedback-text"></label>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<div class="submit-result">Спасибо! Ваше сообщение было отправлено.</div>
+				<input type="submit" value="Отправить" />
+			</div>
+		</form>
+	</div>
+</div>
 <header>
 	<div class="container">
+		<div class="mobile-menu-trigger"></div>
 		<div class="row">
 			<div class="col-xs-12">
 				<ul class="small-nav">
@@ -51,35 +81,6 @@
 			</div>
 			<div class="header-feedback-col">
 				<a class="underlined" href="#feedback" data-toggle="modal">Написать нам</a>
-				<div class="modal fade" id="feedback">
-					<div class="modal-dialog">
-						<form action="" method="POST" class="modal-content animated-placeholder">
-							<div class="modal-header">Свяжитесь с нами</div>
-							<div class="modal-body">
-								<div class="input">
-									<input class="animated-placeholder" type="text" id="feedback-name" name="feedback-name" required placeholder="Имя" />
-									<label for="feedback-name"></label>
-								</div>
-								<div class="input">
-									<input class="animated-placeholder" type="tel" id="feedback-phone" name="feedback-phone" required placeholder="Номер телефона" />
-									<label for="feedback-phone"></label>
-								</div>
-								<div class="input">
-									<input class="animated-placeholder" type="email" id="feedback-email" name="feedback-email" placeholder="E-mail">
-									<label for="feedback-email"></label>
-								</div>
-								<div class="input">
-									<textarea class="animated-placeholder" name="feedback-text" id="feedback-text" required placeholder="Текст сообщения"></textarea>
-									<label for="feedback-text"></label>
-								</div>
-							</div>
-							<div class="modal-footer">
-								<div class="submit-result">Спасибо! Ваше сообщение было отправлено.</div>
-								<input type="submit" value="Отправить" />
-							</div>
-						</form>
-					</div>
-				</div>
 			</div>
 			<div class="header-basket-col">
 				<div class="basket">
@@ -248,13 +249,21 @@
 					<!-- Wrapper for slides -->
 					<div class="carousel-inner">
 						<div class="item active">
-							<a href="#"><img src="images/slide-1.png" alt="Слайд 1"></a>
+							<a href="#">
+								<div><img src="images/image-for-slider-1.png" alt="Слайд 1"></div><!-- Image on the left side -->
+								<div>При покупке 2х средств 1<br><span>Filorga в подарок<br>Meso Mask 30мл</span></div><!-- Text on the right side -->
+							</a>
 						</div>
 						<div class="item">
-							<a href="#"><img src="images/slide-1.png" alt="Слайд 1"></a>
+							<a href="#">
+								<div><img src="images/image-for-slider-1.png" alt="Слайд 1"></div>
+								<div>При покупке 2х средств 2<br><span>Filorga в подарок<br>Meso Mask 30мл</span></div>
+							</a>
 						</div>
 						<div class="item">
-							<a href="#"><img src="images/slide-1.png" alt="Слайд 1"></a>
+							<a href="#">
+								<div><img src="images/slide-1.png" alt="Слайд 1"></div><!-- Big image only -->
+							</a>
 						</div>
 					</div>
 					<!-- Controls -->

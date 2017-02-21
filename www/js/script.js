@@ -1,10 +1,10 @@
 ﻿function fix_menu_on() {
-	$("header nav").addClass("fixed");
-	$("header").css("padding-bottom", "71px");
+	$("header").addClass("fixed");
+	$('body').css('padding-top',136);
 }
 function fix_menu_off() {
-	$("header nav").removeAttr("class");
-	$("header").removeAttr("style");
+	$("header").removeAttr("class");
+	$('body').css('padding-top',0);
 }
 
 $(document).ready(function(){
@@ -45,16 +45,42 @@ $(document).ready(function(){
 		}
 	});
 	// Sticky menu
-	if($(document).scrollTop() > 115) {
-		fix_menu_on()
-	} else {
-		fix_menu_off()
+	if ($(window).width() > 768 || screen.width > 768) {
+		if($(document).scrollTop() > 136) {
+			fix_menu_on();
+		} else {
+			fix_menu_off();
+		}
 	}
 	$(window).scroll(function(){
-		if($(document).scrollTop() > 115) {
-			fix_menu_on()
+		if($(window).width() > 768 || screen.width > 768) {
+			if($(document).scrollTop() > 136) {
+				fix_menu_on();
+			} else {
+				fix_menu_off();
+			}
+		}
+	});
+	// Mobile menu
+	$('.mobile-menu-trigger').on('click', function(){
+		if($('body').hasClass('mobile-menu-on')) {
+			$('body').animate({
+				left:0
+			},300);
+			$('header nav').animate({
+				left:-320
+			},300);
+			setTimeout(function(){
+				$('body').removeClass('mobile-menu-on');
+			},300);
 		} else {
-			fix_menu_off()
+			$('body').addClass('mobile-menu-on');
+			$('body').animate({
+				left:320
+			},300);
+			$('header nav').animate({
+				left:0
+			},300);
 		}
 	});
 	// dotdotdot
