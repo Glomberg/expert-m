@@ -218,7 +218,11 @@ a {
 	font-weight: 300;
 	text-decoration: none;
 	line-height: 38px;
+	transition: opacity 0.3s ease-in-out;
 }
+	.pager a:hover {
+		opacity: 0.75;
+	}
 	.pager .next a {
 		padding-right: 45px;
 		background-image: url('../images/pager-ico.png');
@@ -345,6 +349,10 @@ header {
 		font-family: 'Lato';
 		letter-spacing: 0.1px;
 	}
+		.header-phones a {
+			text-decoration: none;
+			color: #FFF;
+		}
 	.header-search {
 		height: 47px;
 		width: 100%;
@@ -454,7 +462,7 @@ header {
 						color: #000000;
 						margin-bottom: 15px;
 					}
-						.basket-details-body .item > div {
+						.basket-details-body .item > * {
 							display: inline-block;
 							vertical-align: middle;
 						}
@@ -472,6 +480,8 @@ header {
 							overflow: hidden;
 							line-height: 0.8;
 							padding: 0 4px 1px;
+							color: #000000;
+							text-decoration: none;
 						}
 						.basket-details-body .item .pcs {
 							width: 11.6%;
@@ -667,11 +677,7 @@ footer {
 	color: #FFFFFF;
 }
 	.footer-cols-wrapper {
-		display: flex;
 		margin-bottom: 49px;
-	}
-	.footer-col {
-		flex-grow: 1;
 	}
 	.footer-col > span {
 		color: #B6CBD9;
@@ -688,6 +694,9 @@ footer {
 		text-decoration: none;
 		font-size: 15px;
 	}
+	.footer-col ul li a:hover {
+		text-decoration: underline;
+	}
 	.footer-socials {
 		padding-top: 20px;
 		text-align: right;
@@ -695,6 +704,10 @@ footer {
 		.footer-socials li {
 			display: inline-block;
 			margin-left: 20px;
+			white-space: nowrap;
+		}
+		.footer-socials li:first-child {
+			margin-left: 0;
 		}
 			.footer-socials li a {
 				display: block;
@@ -957,11 +970,12 @@ footer {
 		height: 35px;
 	}
 	.goods .item .price.special-price {
-		background-color: #F2DDE1;
-		color: #DB4248;
+		background-color: #F2DDE1 !important;
+		color: #DB4248 !important;
 	}
 	.goods .item:hover .price { 
 		background-color: #54545A;
+		color: #FFFFFF;
 	}
 		.goods .item .price span {
 			font-size: 10px;

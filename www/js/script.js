@@ -180,7 +180,19 @@ $(document).ready(function(){
 			}
 		}
 		$('.count input[type="text"]').on('keyup, change', function(){
-			check_product_count($(this).attr('id'));
+			if($(this).val().search(/[^0-9]/) == 0) {
+				$(this).val(1);
+			} else if ($(this).val().search(/[^0-9]/) == 1) {
+				if(parseInt($(this).val()) == 0) {
+					$(this).val(1);
+				} else {
+					$(this).val(parseInt($(this).val()));
+				}
+			} 
+			else {
+				check_product_count($(this).attr('id'));
+			}
+			
 		});
 		$('.product-count-increment').on('click', function(){
 			$(this).siblings('input[type="text"]').val(parseInt($(this).siblings('input[type="text"]').val()) + 1);
@@ -281,6 +293,16 @@ $(document).ready(function(){
 			}
 			$('.show-on-the-map').on('click', function(e){
 				e.preventDefault();
+				for(var j = 0; j < shop_count; j++) {
+					if($('label.shop:eq(' + j + ')').siblings('input').is(':checked')) {
+						var key = j + 1;
+						myMap.panTo(adress['shop' + key], {
+							flying: 1
+						});
+					}
+				}
+			});
+			$('.outpost-checkbox-item').on('click', function(e){
 				for(var j = 0; j < shop_count; j++) {
 					if($('label.shop:eq(' + j + ')').siblings('input').is(':checked')) {
 						var key = j + 1;
