@@ -84,7 +84,7 @@ $(document).ready(function(){
 		}
 	});
 	// FancyBox 2
-	if($('.zoom').length) { $('.zoom').fancybox(); }
+	if($('a.zoom').length) { $('a.zoom').fancybox(); }
 	// dotdotdot
 	if($(".goods .item .description").length >= 1) { $(".goods .item .description").dotdotdot(); }
 	if($('.blog').length) { $(".dotted").dotdotdot(); }

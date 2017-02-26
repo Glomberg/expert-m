@@ -9,6 +9,7 @@
 	<link rel="stylesheet" type="text/css" href="css/waves.min.css" />
 	<link rel="stylesheet" type="text/css" href="adds/jquery-ui/jquery-ui.min.css" />
 	<link rel="stylesheet" type="text/css" href="adds/jScrollPane/jquery.jscrollpane.css" />
+	<link rel="stylesheet" type="text/css" href="adds/fancybox2/jquery.fancybox.css" />
 	<link rel="stylesheet" type="text/css" href="css/styles.css" />
 	<link rel="stylesheet" type="text/css" href="css/media.css" />
 	<!--[if lt IE 9]>
@@ -24,6 +25,35 @@
 </head>
 <body>
 <!-- header -->
+<div class="modal fade" id="feedback">
+	<div class="modal-dialog">
+		<form action="" method="POST" class="modal-content animated-placeholder">
+			<div class="modal-header">Свяжитесь с нами</div>
+			<div class="modal-body">
+				<div class="input">
+					<input class="animated-placeholder" type="text" id="feedback-name" name="feedback-name" required placeholder="Имя" />
+					<label for="feedback-name"></label>
+				</div>
+				<div class="input">
+					<input class="animated-placeholder" type="tel" id="feedback-phone" name="feedback-phone" required placeholder="Номер телефона" />
+					<label for="feedback-phone"></label>
+				</div>
+				<div class="input">
+					<input class="animated-placeholder" type="email" id="feedback-email" name="feedback-email" placeholder="E-mail">
+					<label for="feedback-email"></label>
+				</div>
+				<div class="input">
+					<textarea class="animated-placeholder" name="feedback-text" id="feedback-text" required placeholder="Текст сообщения"></textarea>
+					<label for="feedback-text"></label>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<div class="submit-result">Спасибо! Ваше сообщение было отправлено.</div>
+				<input type="submit" value="Отправить" />
+			</div>
+		</form>
+	</div>
+</div>
 <header>
 	<div class="container">
 		<div class="mobile-menu-trigger"></div>
@@ -43,7 +73,7 @@
 				<a href="/"><img src="images/logo.png" alt="Логотип Эксперт-М"></a>
 			</div>
 			<div class="header-search-col">
-				<div class="header-phones">8(4212)40-82-02, 8-924-21-1118</div>
+				<div class="header-phones"><a href="tel:+74212408202">8(4212)40-82-02</a>, <a href="tel:+7924211118">8-924-21-1118</a></div>
 				<form action="" method="POST" class="header-search animated-placeholder">
 					<input class="animated-placeholder" type="text" name="header-seach" id="input-search" placeholder="Поиск..." required />
 					<label for="input-search"></label>
@@ -52,35 +82,6 @@
 			</div>
 			<div class="header-feedback-col">
 				<a class="underlined" href="#feedback" data-toggle="modal">Написать нам</a>
-				<div class="modal fade" id="feedback">
-					<div class="modal-dialog">
-						<form action="" method="POST" class="modal-content animated-placeholder">
-							<div class="modal-header">Свяжитесь с нами</div>
-							<div class="modal-body">
-								<div class="input">
-									<input class="animated-placeholder" type="text" id="feedback-name" name="feedback-name" required placeholder="Имя" />
-									<label for="feedback-name"></label>
-								</div>
-								<div class="input">
-									<input class="animated-placeholder" type="tel" id="feedback-phone" name="feedback-phone" required placeholder="Номер телефона" />
-									<label for="feedback-phone"></label>
-								</div>
-								<div class="input">
-									<input class="animated-placeholder" type="email" id="feedback-email" name="feedback-email" placeholder="E-mail">
-									<label for="feedback-email"></label>
-								</div>
-								<div class="input">
-									<textarea class="animated-placeholder" name="feedback-text" id="feedback-text" required placeholder="Текст сообщения"></textarea>
-									<label for="feedback-text"></label>
-								</div>
-							</div>
-							<div class="modal-footer">
-								<div class="submit-result">Спасибо! Ваше сообщение было отправлено.</div>
-								<input type="submit" value="Отправить" />
-							</div>
-						</form>
-					</div>
-				</div>
 			</div>
 			<div class="header-basket-col">
 				<div class="basket">
@@ -92,8 +93,8 @@
 					<div class="basket-details-body">
 						<div class="item">Ваша корзина еще пуста.</div>
 						<div class="item">
-							<div class="img" style="background-image: url('images/tovar-1.png');"></div>
-							<div class="title">Инициатик - средства против первых морщин длинный текст длинный текст длинный текст</div>
+							<a href="" class="img" style="background-image: url('images/tovar-1.png');"></a>
+							<a href="" class="title">Инициатик - средства против первых морщин длинный текст длинный текст длинный текст</a>
 							<div class="pcs">2 <span>шт</span></div>
 							<div class="price">
 								<div>
@@ -105,8 +106,8 @@
 							</div>
 						</div>
 						<div class="item">
-							<div class="img" style="background-image: url('images/tovar-2.jpg');"></div>
-							<div class="title">Инициатик - средства против первых морщин длинный текст длинный текст длинный текст</div>
+							<a href="" class="img" style="background-image: url('images/tovar-2.jpg');"></a>
+							<a href="" class="title">Инициатик - средства против первых морщин длинный текст длинный текст длинный текст</a>
 							<div class="pcs">2 <span>шт</span></div>
 							<div class="price">
 								<div>
@@ -119,8 +120,8 @@
 							</div>
 						</div>
 						<div class="item">
-							<div class="img" style="background-image: url('images/tovar-2.jpg');"></div>
-							<div class="title">Инициатик - средства против первых морщин длинный текст длинный текст длинный текст</div>
+							<a href="" class="img" style="background-image: url('images/tovar-2.jpg');"></a>
+							<a href="" class="title">Инициатик - средства против первых морщин длинный текст длинный текст длинный текст</a>
 							<div class="pcs">2 <span>шт</span></div>
 							<div class="price">
 								<div>
@@ -132,8 +133,8 @@
 							</div>
 						</div>
 						<div class="item">
-							<div class="img" style="background-image: url('images/tovar-2.jpg');"></div>
-							<div class="title">Инициатик - средства против первых морщин длинный текст длинный текст длинный текст</div>
+							<a href="" class="img" style="background-image: url('images/tovar-2.jpg');"></a>
+							<a href="" class="title">Инициатик - средства против первых морщин длинный текст длинный текст длинный текст</a>
 							<div class="pcs">2 <span>шт</span></div>
 							<div class="price">
 								<div>
@@ -145,8 +146,8 @@
 							</div>
 						</div>
 						<div class="item">
-							<div class="img" style="background-image: url('images/tovar-2.jpg');"></div>
-							<div class="title">Инициатик - средства против первых морщин длинный текст длинный текст длинный текст</div>
+							<a href="" class="img" style="background-image: url('images/tovar-2.jpg');"></a>
+							<a href="" class="title">Инициатик - средства против первых морщин длинный текст длинный текст длинный текст</a>
 							<div class="pcs">2 <span>шт</span></div>
 							<div class="price">
 								<div>
@@ -612,34 +613,38 @@
 <footer>
 	<div class="container">
 		<div class="row">
-			<div class="col-xs-12 footer-cols-wrapper">
-				<div class="footer-col">
-					<span>Каталог</span>
-					<ul>
-						<li><a href="#">Посмотреть каталог онлайн</a></li>
-						<li><a href="#">Заказать каталог по почте</a></li>
-						<li><a href="#">Брошюры</a></li>
-						<li><a href="#">Руководства по покупке</a></li>
-					</ul>
+			<div class="col-xs-8 footer-cols-wrapper">
+				<div class="row">
+					<div class="footer-col col-xs-4">
+						<span>Каталог</span>
+						<ul>
+							<li><a href="#">Посмотреть каталог онлайн</a></li>
+							<li><a href="#">Заказать каталог по почте</a></li>
+							<li><a href="#">Брошюры</a></li>
+							<li><a href="#">Руководства по покупке</a></li>
+						</ul>
+					</div>
+					<div class="footer-col col-xs-4">
+						<span>Каталог</span>
+						<ul>
+							<li><a href="#">Посмотреть каталог онлайн</a></li>
+							<li><a href="#">Заказать каталог по почте Посмотреть каталог онлайн</a></li>
+							<li><a href="#">Брошюры</a></li>
+							<li><a href="#">Руководства по покупке</a></li>
+						</ul>
+					</div>
+					<div class="footer-col col-xs-4">
+						<span>Каталог</span>
+						<ul>
+							<li><a href="#">Посмотреть каталог онлайн Посмотреть каталог онлайн</a></li>
+							<li><a href="#">Заказать каталог по почте</a></li>
+							<li><a href="#">Брошюры</a></li>
+							<li><a href="#">Руководства по покупке</a></li>
+						</ul>
+					</div>
 				</div>
-				<div class="footer-col">
-					<span>Каталог</span>
-					<ul>
-						<li><a href="#">Посмотреть каталог онлайн</a></li>
-						<li><a href="#">Заказать каталог по почте</a></li>
-						<li><a href="#">Брошюры</a></li>
-						<li><a href="#">Руководства по покупке</a></li>
-					</ul>
-				</div>
-				<div class="footer-col">
-					<span>Каталог</span>
-					<ul>
-						<li><a href="#">Посмотреть каталог онлайн</a></li>
-						<li><a href="#">Заказать каталог по почте</a></li>
-						<li><a href="#">Брошюры</a></li>
-						<li><a href="#">Руководства по покупке</a></li>
-					</ul>
-				</div>
+			</div>
+			<div class="col-xs-4">
 				<div class="footer-col">
 					<ul class="footer-socials">
 						<li><a href="#"></a></li>
@@ -669,6 +674,7 @@
 <script src="js/jquery.maskedinput.min.js"></script>
 <script src="adds/jScrollPane/jquery.mousewheel.js"></script>
 <script src="adds/jScrollPane/jquery.jscrollpane.min.js"></script>
+<script src="adds/fancybox2/jquery.fancybox.pack.js"></script>
 <script src="js/script.js"></script>
 </body>
 </html>
