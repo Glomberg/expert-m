@@ -9,6 +9,7 @@
 	<link rel="stylesheet" type="text/css" href="css/waves.min.css" />
 	<link rel="stylesheet" type="text/css" href="adds/jquery-ui/jquery-ui.min.css" />
 	<link rel="stylesheet" type="text/css" href="adds/jScrollPane/jquery.jscrollpane.css" />
+	<link rel="stylesheet" type="text/css" href="adds/fancybox2/jquery.fancybox.css" />
 	<link rel="stylesheet" type="text/css" href="css/styles.css" />
 	<link rel="stylesheet" type="text/css" href="css/media.css" />
 	<!--[if lt IE 9]>
@@ -24,6 +25,35 @@
 </head>
 <body>
 <!-- header -->
+<div class="modal fade" id="feedback">
+	<div class="modal-dialog">
+		<form action="" method="POST" class="modal-content animated-placeholder">
+			<div class="modal-header">Свяжитесь с нами</div>
+			<div class="modal-body">
+				<div class="input">
+					<input class="animated-placeholder" type="text" id="feedback-name" name="feedback-name" required placeholder="Имя" />
+					<label for="feedback-name"></label>
+				</div>
+				<div class="input">
+					<input class="animated-placeholder" type="tel" id="feedback-phone" name="feedback-phone" required placeholder="Номер телефона" />
+					<label for="feedback-phone"></label>
+				</div>
+				<div class="input">
+					<input class="animated-placeholder" type="email" id="feedback-email" name="feedback-email" placeholder="E-mail">
+					<label for="feedback-email"></label>
+				</div>
+				<div class="input">
+					<textarea class="animated-placeholder" name="feedback-text" id="feedback-text" required placeholder="Текст сообщения"></textarea>
+					<label for="feedback-text"></label>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<div class="submit-result">Спасибо! Ваше сообщение было отправлено.</div>
+				<input type="submit" value="Отправить" />
+			</div>
+		</form>
+	</div>
+</div>
 <header>
 	<div class="container">
 		<div class="mobile-menu-trigger"></div>
@@ -52,35 +82,6 @@
 			</div>
 			<div class="header-feedback-col">
 				<a class="underlined" href="#feedback" data-toggle="modal">Написать нам</a>
-				<div class="modal fade" id="feedback">
-					<div class="modal-dialog">
-						<form action="" method="POST" class="modal-content animated-placeholder">
-							<div class="modal-header">Свяжитесь с нами</div>
-							<div class="modal-body">
-								<div class="input">
-									<input class="animated-placeholder" type="text" id="feedback-name" name="feedback-name" required placeholder="Имя" />
-									<label for="feedback-name"></label>
-								</div>
-								<div class="input">
-									<input class="animated-placeholder" type="tel" id="feedback-phone" name="feedback-phone" required placeholder="Номер телефона" />
-									<label for="feedback-phone"></label>
-								</div>
-								<div class="input">
-									<input class="animated-placeholder" type="email" id="feedback-email" name="feedback-email" placeholder="E-mail">
-									<label for="feedback-email"></label>
-								</div>
-								<div class="input">
-									<textarea class="animated-placeholder" name="feedback-text" id="feedback-text" required placeholder="Текст сообщения"></textarea>
-									<label for="feedback-text"></label>
-								</div>
-							</div>
-							<div class="modal-footer">
-								<div class="submit-result">Спасибо! Ваше сообщение было отправлено.</div>
-								<input type="submit" value="Отправить" />
-							</div>
-						</form>
-					</div>
-				</div>
 			</div>
 			<div class="header-basket-col">
 				<div class="basket">
@@ -307,6 +308,7 @@
 <script src="js/jquery.maskedinput.min.js"></script>
 <script src="adds/jScrollPane/jquery.mousewheel.js"></script>
 <script src="adds/jScrollPane/jquery.jscrollpane.min.js"></script>
+<script src="adds/fancybox2/jquery.fancybox.pack.js"></script>
 <script src="js/script.js"></script>
 </body>
 </html>

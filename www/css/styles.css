@@ -303,7 +303,8 @@ header {
 		left: 0;
 		padding-top: 10px;
 	}
-	body.modal-open header.fixed {
+	body.modal-open header.fixed,
+	.fancybox-margin header.fixed {
 		padding-right: 17px;
 	}
 	header.fixed .small-nav,
@@ -1660,6 +1661,12 @@ footer {
 			font-size: 14.25px;
 			color: #4F4F4F;
 		}
+			.blog article .dotted {
+				max-height: 70px;
+			}
+			.blog .big article .dotted  {
+				max-height: 308px;
+			}
 		.blog article .pager {
 			margin: 0;
 			margin-top: 5px;

@@ -83,8 +83,11 @@ $(document).ready(function(){
 			},300);
 		}
 	});
+	// FancyBox 2
+	if($('.zoom').length) { $('.zoom').fancybox(); }
 	// dotdotdot
 	if($(".goods .item .description").length >= 1) { $(".goods .item .description").dotdotdot(); }
+	if($('.blog').length) { $(".dotted").dotdotdot(); }
 	//Mini-Cart remove item
 	$('.basket-details-body .item .remove a').on('click', function(e){
 		e.preventDefault();
