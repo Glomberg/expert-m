@@ -1,4 +1,45 @@
-﻿function fix_menu_on() {
+﻿function add_to_cart_onclick() {
+	// события, которые произойдут после нажатия "В корзину"
+	// анимация мини-корзины, пересчет итого, пересчет бесплатной доставки
+	// эта функция отработает так же и после загрузки страницы
+		// Shake-effect
+	var in_action = false;
+	if(!in_action) {
+		in_action = true;
+		$('.header-basket-col .basket .ico').addClass('shake');
+		setTimeout(function(){
+			$('.header-basket-col .basket .ico').removeClass('shake');
+			in_action = false;
+		}, 600);
+	}
+		// Check summ
+	var old_val = parseFloat($('.header-basket-col .basket .total-price > span').text());
+	var summ = 0;
+	
+	$('.basket-details-body .item').each(function(){
+		if($(this).attr('data-item-summ')) {
+			summ += parseFloat($(this).attr('data-item-summ'));
+		}
+	});
+	if (summ != 0) {
+		$('.basket-details-footer .summ span:eq(1)').text(summ);
+	}
+	
+	var i = 1;
+	var step = (summ - old_val) / 10;
+	console.log(step);
+	var interval = setInterval(function(){
+        if (i <= 10) {
+			var value = old_val + step * i;
+			$('.header-basket-col .basket .total-price > span').html(value.toFixed(2));
+        } else {
+			clearInterval(interval);
+        }
+        i++;
+    }, 6000 / 100);
+		// Check shiping
+}
+function fix_menu_on() {
 	$("header").addClass("fixed");
 	$('body').css('padding-top',136);
 }
@@ -8,6 +49,8 @@ function fix_menu_off() {
 }
 
 $(document).ready(function(){
+	// Check mini-cart and shiping on load
+	add_to_cart_onclick();
 	// Animate placeholders
 	if ($('.animated-placeholder').length >= 1) {
 		var hidden_styles = {'opacity': '0', 'left': '-65px'};

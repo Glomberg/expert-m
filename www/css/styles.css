@@ -267,6 +267,20 @@ a {
 .breadcrumb li a {
 	color: #DB4248;
 }
+/* Shake-effect */
+@keyframes shake {
+0% { transform: translate(2px, 1px) rotate(0deg); }
+30% { transform: translate(0px, 2px) rotate(0deg); }
+60% { transform: translate(-3px, 1px) rotate(0deg); }
+90% { transform: translate(2px, 2px) rotate(0deg); }
+}
+.shake {
+animation-name: shake;
+animation-duration: 0.3s;
+transform-origin:50% 50%;
+animation-iteration-count: infinite;
+animation-timing-function: linear;
+}
 
 /* general */
 .mobile-menu-trigger {
