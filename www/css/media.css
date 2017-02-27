@@ -7,7 +7,29 @@
 
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 991px) {
-	
+	.header-logo-col, .header-search-col, .header-feedback-col, .header-basket-col {
+		width: 50%;
+		height: 54px;
+	}
+	.carousel-control.left, .carousel-control.right { display: none; }
+	#frontpage-carousel .carousel-indicators {
+		display: block;
+		width: 100%;
+		left: 0;
+		margin-left: 0;
+		text-align: right;
+	}
+	#frontpage-carousel .item > a {
+		flex-wrap: wrap-reverse;
+		font-size: 0.7em;
+	}
+	#frontpage-carousel .item > a > div {
+		line-height: 1.5em;
+		text-align: center;
+	}
+	#frontpage-carousel .carousel-inner {
+		height: 300px;
+	}
 }
 
 /* Small Devices, Tablets */
@@ -46,6 +68,90 @@
 	
 	.main-nav {
 		flex-direction: column;
+	}
+	.basket-details-header, .header-basket-col .basket-details::before {
+		display: none;
+	}
+	.header-basket-col .basket-details {
+		position: fixed;
+		width: 100%;
+		top: 110px;
+		right: 0;
+	}
+	.basket-details-footer {
+		display: flex;
+		flex-wrap: wrap-reverse;
+	}
+	.basket-details-footer > a, .basket-details-footer > div {
+		width: 100%;
+		text-align: center;
+	}
+	.basket-details-footer > div {
+		margin-bottom: 10px;
+	}
+	.basket-details-body .item .remove {
+		width: 0;
+	}
+	.basket-details-body .item {
+		margin-bottom: 45px;
+		height: 60px;
+	}
+	.basket-details-body .item .img {
+		width: 22%;
+	}
+	.basket-details-body .item .pcs {
+		position: absolute;
+		left: 4px;
+		top: 62px;
+	}
+	.basket-details-body .item .title {
+		width: 49%;
+		font-size: 18px;
+		line-height: 1;
+	}
+	.basket-details-body .item .price {
+		font-size: 20px;
+	}
+	.frontpage-categories {
+		padding-top: 0;
+		background: #2F2D31;
+	}
+	.frontpage-categories a:not(.offer-of-the-week) {
+		height: 70px;
+		background: #2F2D31 !important;
+		margin-bottom: 0;
+		box-shadow: none;
+	}
+	.frontpage-categories .offer-of-the-week {
+		background: #FFF;
+		margin-bottom: 0;
+		box-shadow: none;
+	}
+	.frontpage-categories a:not(.offer-of-the-week) span {
+		background: transparent !important;
+		color: #FFFFFF !important;
+	}
+	.goods .item {
+		box-shadow: none !important;
+	}
+	.goods .item:not(.sale) {
+		border-top: 6px solid #464647;
+	}
+	.goods .item .price {
+		background: transparent !important;
+		color: #000 !important;
+	}
+	.goods .to-the-cart {
+		bottom: 0;
+	}
+	footer, .footer-socials, .footer-copyright > div:last-child {
+		text-align: center;
+	}
+	.footer-copyright {
+		flex-wrap: wrap;
+	}
+	.footer-copyright > div:last-child {
+		padding-top: 20px;
 	}
 }
 

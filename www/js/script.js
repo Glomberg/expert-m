@@ -26,18 +26,42 @@
 	}
 	
 	var i = 1;
-	var step = (summ - old_val) / 10;
-	console.log(step);
-	var interval = setInterval(function(){
-        if (i <= 10) {
-			var value = old_val + step * i;
-			$('.header-basket-col .basket .total-price > span').html(value.toFixed(2));
-        } else {
-			clearInterval(interval);
-        }
-        i++;
-    }, 6000 / 100);
+	if ( old_val > summ ) {
+		var step = (old_val - summ) / 10;
+		var interval = setInterval(function(){
+			if (i <= 10) {
+				var value = old_val - step * i;
+				$('.header-basket-col .basket .total-price > span').html(value.toFixed(2));
+			} else {
+				clearInterval(interval);
+			}
+			i++;
+		}, 6000 / 100);
+	} else {
+		var step = (summ - old_val) / 10;
+		var interval = setInterval(function(){
+			if (i <= 10) {
+				var value = old_val + step * i;
+				$('.header-basket-col .basket .total-price > span').html(value.toFixed(2));
+			} else {
+				clearInterval(interval);
+			}
+			i++;
+		}, 6000 / 100);
+	}
 		// Check shiping
+	if ($('.free-shiping').length) {
+		if (summ > 500) {
+			$('.free-shiping .car .ico').css('width', '100%');
+			$('.free-shiping .text').text('Доставка бесплатна.');
+			$('.free-shiping .car a').hide();
+		} else {
+			var free_shiping_left = 500 - summ;
+			$('.free-shiping .text span').text(free_shiping_left + 'p.');
+			var car_range = 100 - ( free_shiping_left * 100 / 500 );
+			$('.free-shiping .car .ico').css('width', car_range + '%');
+		}
+	}
 }
 function fix_menu_on() {
 	$("header").addClass("fixed");
@@ -51,6 +75,12 @@ function fix_menu_off() {
 $(document).ready(function(){
 	// Check mini-cart and shiping on load
 	add_to_cart_onclick();
+	$('.to-the-cart').on('click', function(){ //-|
+		$('.basket-details-body > .item:last')// |
+		.clone()                              // |
+		.appendTo('.basket-details-body');    // |-Это тестовое действие, что бы продемонстрировать работу функции add_to_cart_onclick()
+		add_to_cart_onclick();                // |
+	});                                       //-|
 	// Animate placeholders
 	if ($('.animated-placeholder').length >= 1) {
 		var hidden_styles = {'opacity': '0', 'left': '-65px'};
@@ -134,7 +164,11 @@ $(document).ready(function(){
 	//Mini-Cart remove item
 	$('.basket-details-body .item .remove a').on('click', function(e){
 		e.preventDefault();
-		$(this).parent().parent('.item').slideUp();
+		var item = $(this).parent().parent('.item');
+		item.slideUp();
+		setInterval(function(){
+			item.remove();
+		}, 400);
 	});
 	// Waves buttons
 	Waves.init();
@@ -250,26 +284,34 @@ $(document).ready(function(){
 		});
 	}
 	// Stars raiting
-	if( $('.stars').length >= 1 ) {
-		$('.stars').each(function(){
-			if($(this).attr('data-stars-count')) {
-				var stars_count = parseInt($(this).attr('data-stars-count'));
-				if (stars_count < 0 || stars_count > 5) {
-					console.log('"data-stars-count" attribute must be 1-5');
+	function check_review_rating() {
+		if( $('.stars').length >= 1 ) {
+			$('.stars').each(function(){
+				if($(this).find('div').length >= 1) {
+					//this star rating already initialized
 				} else {
-					for(var i = 1; i <= 5; i++) {
-						if(i <= stars_count) {
-							$(this).append('<div class="active"></div>');
+					if($(this).attr('data-stars-count')) {
+						var stars_count = parseInt($(this).attr('data-stars-count'));
+						if (stars_count < 0 || stars_count > 5) {
+							console.log('"data-stars-count" attribute must be 1-5');
 						} else {
-							$(this).append('<div></div>');
+							for(var i = 1; i <= 5; i++) {
+								if(i <= stars_count) {
+									$(this).append('<div class="active"></div>');
+								} else {
+									$(this).append('<div></div>');
+								}
+							}
 						}
+					} else {
+						console.log('"data-stars-count" attribute not exists');
 					}
 				}
-			} else {
-				console.log('"data-stars-count" attribute not exists');
-			}
-		});
+			});
+		}
 	}
+	check_review_rating();
+	
 	// Datepicker
 	if($("#datepicker").length >= 1) {
 		$.datepicker.regional['ru'] = {
@@ -360,4 +402,24 @@ $(document).ready(function(){
 			});
 		}
 	}
+	
+	// AJAX reviews adding (for test)
+	$('.reviews .pager a').on('click', function(){
+		$('.reviews .pager').hide();
+		$('.reviews .loader').show();
+		$.ajax({
+			url : 'additional-reviews',
+			dataType : 'html',
+			success : function(data){
+				var new_element = $('.reviews ul').append('<li></li>');
+				$('.reviews ul li:last').append(data).hide().fadeIn();
+				check_review_rating();
+				setTimeout(function(){
+					$('.reviews .loader').hide();
+					$('.reviews .pager').show();
+				}, 500);
+			}
+		});
+	});
+	
 });

@@ -535,6 +535,7 @@ header {
 						.basket-details-body .item .remove {
 							width: 9%;
 							text-align: right;
+							overflow: hidden;
 						}
 							.basket-details-body .item .remove a {
 								width: 16px;
@@ -812,6 +813,20 @@ footer {
 				font-size: 2.5em;
 				color: #CB1F26;
 			}
+	#frontpage-carousel .carousel-indicators {
+		display: none;
+		z-index: 2;
+	}
+	#frontpage-carousel .carousel-indicators li {
+		width: 20px;
+		height: 20px;
+		margin-left: 20px;
+		border: none;
+		background: #BABABA;
+	}
+	#frontpage-carousel .carousel-indicators li.active {
+		background: #C83D43;
+	}
 
 .frontpage-categories {
 	padding-top: 47px;
@@ -1564,6 +1579,9 @@ footer {
 		height: 38px;
 		display: inline-block;
 	}
+	.reviews .loader {
+		display: none;
+	}
 	
 .blog {
 	
@@ -1928,6 +1946,10 @@ img.float-right {
 	vertical-align: top;
 	font-size: 18px;
 	color: #4F4F4F;
+}
+.cart table td a {
+	color: #4F4F4F;
+	text-decoration: none;
 }
 .cart table td img {
 	width: 111px;
