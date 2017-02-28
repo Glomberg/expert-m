@@ -281,6 +281,7 @@ $(document).ready(function(){
 	}
 	// Zoom and Image change
 	if($('.product-images .mini-images').length >= 1) {
+		
 		$('.product-images .mini-images > div:eq(0)').addClass('active');
 		function select_the_image() {
 			var image_src = $('.product-images .mini-images .active img').attr('src');
@@ -288,17 +289,21 @@ $(document).ready(function(){
 			$('.product-images .main-image img').attr('src', image_src).attr('data-zoom-image', image_src);
 		}
 		select_the_image();
-		$('.product-images .main-image img').elevateZoom({
+		if($(window).width() > 768 || screen.width > 768) {
+			$('.product-images .main-image img').elevateZoom({
 				zoomWindowWidth:440,
 				zoomWindowHeight:430,
 				borderSize:2,
 				borderColour:'#BECAD3'
 			});
+		}
 		$('.product-images .mini-image').on('click', function(){
 			$('.product-images .mini-image').removeClass('active');
 			$(this).addClass('active');
 			select_the_image();
-			$('.product-images .main-image img').data('elevateZoom').swaptheimage($('.product-images .mini-images .active img').attr('src'), $('.product-images .mini-images .active img').attr('src'));
+			if($(window).width() > 768 || screen.width > 768) {
+				$('.product-images .main-image img').data('elevateZoom').swaptheimage($('.product-images .mini-images .active img').attr('src'), $('.product-images .mini-images .active img').attr('src'));
+			}
 		});
 	}
 	// input[type="number"] customization
@@ -415,6 +420,18 @@ $(document).ready(function(){
 				contentWidth: '0px'
 			});
 		},400);
+	});
+	// Touch swipe
+	$(".cart table tr").swipe({
+		swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
+			if (direction == 'left' || direction == 'right') {
+				if($(this).hasClass('swiped')) {
+					$(this).removeClass('swiped');
+				} else {
+					$(this).addClass('swiped');
+				}
+			}
+		}
 	});
 	// Yandex MAP
 	if($('#map').length >= 1) {

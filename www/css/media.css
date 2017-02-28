@@ -225,6 +225,140 @@
 	.bx-filter {
 		display: none;
 	}
+	.count, .product .price {
+		display: inline-block;
+		width: 49%;
+		vertical-align: top;
+	}
+	.buy-button a {
+		width: 100%;
+	}
+	.reviews .heading {
+		margin-bottom: 50px;
+	}
+	.reviews .heading > span {
+		padding-left: 0;
+	}
+	.reviews .heading > a {
+		left: 15px;
+		top: 105%;
+		width: calc(100% - 30px);
+	}
+	.review-header {
+		margin-bottom: 8px;
+	}
+	.review-body > .row {
+		display: flex;
+		flex-direction: column-reverse;
+	}
+	.stars {
+		margin-bottom: 10px;
+	}
+	#blog-sorting h2 {
+		margin-bottom: 20px;
+	}
+	#blog-sorting .row > div {
+		margin-bottom: 10px;
+	}
+	.blog-sections {
+		display: flex;
+		flex-direction: column-reverse;
+	}
+	.stages {
+		font-size: 16px;
+	}
+	.cart table thead,
+	.cart table td:nth-child(1), 
+	.cart table td:nth-child(4),
+	.cart table td:nth-child(7){
+		display: none;
+	}
+	.cart table tr {
+		position: relative;
+		padding-bottom: 40px;
+		display: flex;
+		background: #FFFFFF;
+		left: 0;
+		transition: left 0.3s ease-in-out;
+	}
+		.cart table tr.swiped {
+			left: -90px;
+		}
+	.cart table td:nth-child(2) {
+		width: 30%;
+		text-align: left;
+	}
+	.cart table td:nth-child(3) {
+		width: 50%;
+	}
+	.cart table td:nth-child(6) {
+		width: 20%;
+	}
+	.cart table td:nth-child(5) {
+		width: 30%;
+		position: absolute;
+		left: 0;
+		bottom: -50px;
+		text-align: left;
+	}
+		.cart table .count input[type="text"] {
+			width: calc(100% - 8px);
+		}
+	.cart table td:nth-child(8) {
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 20%;
+		height: 100%;
+		padding: 0;
+		z-index: -1;
+		transition: all 0.3s ease-in-out;
+	}
+		.cart table tr.swiped td:nth-child(8) {
+			right: -90px;
+			z-index: 0;
+		}
+		.cart table td a {
+			height: 100%;
+			width: 100%;
+			border-radius: 0;
+			position: relative;
+		}
+		.cart .trash {
+			background: #DB4248;
+		}
+		.trash svg {
+			width: 60px;
+			height: 152px;
+		}
+			.trash svg path {
+				fill: #FFFFFF;
+			}
+	.coupon {
+		margin-bottom: 20px;
+		display: block;
+	}
+		.coupon input {
+			display: block;
+		}
+		.coupon input[type="text"],
+		.coupon input[type="button"] {
+			width: 100%;
+			margin-bottom: 10px;
+		}
+		.cart .coupon .animated-placeholder + label {
+			height: 35px;
+		}
+	#select-outpost-modal .modal-dialog {
+		width: auto;
+	}
+	#select-outpost-modal .checkboxes label,
+	#select-outpost-modal .checkboxes label .outpost-phones {
+		font-size: 12px;
+	}
+	#select-outpost-modal .checkboxes label .outpost-title {
+		font-size: 16px;
+	}
 }
 
 /* Extra Small Devices, Phones */

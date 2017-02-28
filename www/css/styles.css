@@ -2454,6 +2454,9 @@ img.float-right {
 	bottom: 6px;
 	cursor: pointer;
 }
+#ui-datepicker-div {
+	z-index: 4 !important;
+}
 #timepicker {
 	position: relative;
 	display: inline-block;

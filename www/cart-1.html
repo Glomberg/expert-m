@@ -244,8 +244,8 @@
 <!-- /header -->
 <div class="container content cart">
 	<div class="row">
-		<div class="col-xs-6"></div>
-		<div class="col-xs-6 free-shiping free-shiping-2">
+		<div class="col-xs-12 col-sm-12 col-md-6"></div>
+		<div class="col-xs-12 col-sm-12 col-md-6 free-shiping free-shiping-2">
 			<div class="car">
 				<div>
 					<div class="range"></div>
@@ -422,15 +422,15 @@
 			</table>
 		</div>
 		<div class="col-xs-12 vertical-line"></div>
-		<div class="col-xs-6 coupon">
+		<div class="col-xs-12 col-sm-12 col-md-6 coupon">
 			<input class="animated-placeholder" type="text" id="coupon" placeholder="Ввести купон на скидку" />
 			<label for="coupon"></label>
 			<input type="button" value="Применить купон" />
 			<div class="coupon-wrong">Вы ввели неверный номер</div>
 			<div class="coupon-success">Спасибо! Купон успешно применен</div>
 		</div>
-		<div class="col-xs-3"></div>
-		<div class="col-xs-3">
+		<div class="col-xs-12 col-sm-12 col-md-3"></div>
+		<div class="col-xs-12 col-sm-12 col-md-3">
 			<div class="summ">Общая сумма заказа  15600 р.</div>
 			<div class="summ2">Сумма со скидкой <span>14200 р.</span></div>
 			<input type="submit" value="Оформить заказ">
@@ -440,7 +440,7 @@
 		<div class="col-xs-12 heading"><span>Товары, которые Вы недавно смотрели</span></div>
 	</div>
 	<div class="row goods recent-view">
-		<div class="col-xs-2">
+		<div class="col-xs-6 col-sm-4 col-md-2">
 			<div class="item">
 				<div class="image" style="background-image: url('images/tovar-2.jpg');"></div>
 				<a href="product.html">
@@ -452,7 +452,7 @@
 				<a href="javascript:void(0);" class="to-the-cart"></a>
 			</div>
 		</div>
-		<div class="col-xs-2">
+		<div class="col-xs-6 col-sm-4 col-md-2">
 			<div class="item">
 				<div class="image" style="background-image: url('images/tovar-1.png');"></div>
 				<a href="product.html">
@@ -464,7 +464,7 @@
 				<a href="javascript:void(0);" class="to-the-cart"></a>
 			</div>
 		</div>
-		<div class="col-xs-2">
+		<div class="col-xs-6 col-sm-4 col-md-2">
 			<div class="item">
 				<div class="image" style="background-image: url('images/tovar-2.jpg');"></div>
 				<a href="product.html">
@@ -476,7 +476,7 @@
 				<a href="javascript:void(0);" class="to-the-cart"></a>
 			</div>
 		</div>
-		<div class="col-xs-2">
+		<div class="col-xs-6 col-sm-4 col-md-2">
 			<div class="item">
 				<div class="image" style="background-image: url('images/tovar-2.jpg');"></div>
 				<a href="product.html">
@@ -488,7 +488,7 @@
 				<a href="javascript:void(0);" class="to-the-cart"></a>
 			</div>
 		</div>
-		<div class="col-xs-2">
+		<div class="col-xs-6 col-sm-4 col-md-2">
 			<div class="item">
 				<div class="image" style="background-image: url('images/tovar-2.jpg');"></div>
 				<a href="product.html">
@@ -500,7 +500,7 @@
 				<a href="javascript:void(0);" class="to-the-cart"></a>
 			</div>
 		</div>
-		<div class="col-xs-2">
+		<div class="col-xs-6 col-sm-4 col-md-2">
 			<div class="item">
 				<div class="image" style="background-image: url('images/tovar-2.jpg');"></div>
 				<a href="product.html">
@@ -518,9 +518,9 @@
 <footer>
 	<div class="container">
 		<div class="row">
-			<div class="col-xs-8 footer-cols-wrapper">
+			<div class="col-xs-12 col-md-8 footer-cols-wrapper">
 				<div class="row">
-					<div class="footer-col col-xs-4">
+					<div class="footer-col col-xs-12 col-md-4">
 						<span>Каталог</span>
 						<ul>
 							<li><a href="#">Посмотреть каталог онлайн</a></li>
@@ -529,7 +529,7 @@
 							<li><a href="#">Руководства по покупке</a></li>
 						</ul>
 					</div>
-					<div class="footer-col col-xs-4">
+					<div class="footer-col col-xs-12 col-md-4">
 						<span>Каталог</span>
 						<ul>
 							<li><a href="#">Посмотреть каталог онлайн</a></li>
@@ -538,7 +538,7 @@
 							<li><a href="#">Руководства по покупке</a></li>
 						</ul>
 					</div>
-					<div class="footer-col col-xs-4">
+					<div class="footer-col col-xs-12 col-md-4">
 						<span>Каталог</span>
 						<ul>
 							<li><a href="#">Посмотреть каталог онлайн Посмотреть каталог онлайн</a></li>
@@ -549,7 +549,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-xs-4">
+			<div class="col-xs-12 col-md-4">
 				<div class="footer-col">
 					<ul class="footer-socials">
 						<li><a href="#"></a></li>
@@ -579,6 +579,8 @@
 <script src="js/jquery.maskedinput.min.js"></script>
 <script src="adds/jScrollPane/jquery.mousewheel.js"></script>
 <script src="adds/jScrollPane/jquery.jscrollpane.min.js"></script>
+<script src="adds/fancybox2/jquery.fancybox.pack.js"></script>
+<script src="js/jquery.touchSwipe.min.js"></script>
 <script src="js/script.js"></script>
 </body>
 </html>
