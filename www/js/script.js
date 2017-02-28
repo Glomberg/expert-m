@@ -1,4 +1,17 @@
-﻿function add_to_cart_onclick() {
+﻿function preloader_top( percent ) {
+	if (percent < 100) {
+		$('.preloader-top > div').css('width', percent + '%');
+	} else {
+		$('.preloader-top > div').css('width', '100%');
+		setTimeout(function(){
+			$('.preloader-top > div').fadeOut(300);
+		}, 400);
+		setTimeout(function(){
+			$('.preloader-top > div').removeAttr('style');
+		}, 800);
+	}
+}
+function add_to_cart_onclick() {
 	// события, которые произойдут после нажатия "В корзину"
 	// анимация мини-корзины, пересчет итого, пересчет бесплатной доставки
 	// эта функция отработает так же и после загрузки страницы
@@ -73,14 +86,13 @@ function fix_menu_off() {
 }
 
 $(document).ready(function(){
+	// Preloader top insert
+	$('body').prepend('<div class="preloader-top"><div></div></div>');
 	// Check mini-cart and shiping on load
 	add_to_cart_onclick();
-	$('.to-the-cart').on('click', function(){ //-|
-		$('.basket-details-body > .item:last')// |
-		.clone()                              // |
-		.appendTo('.basket-details-body');    // |-Это тестовое действие, что бы продемонстрировать работу функции add_to_cart_onclick()
-		add_to_cart_onclick();                // |
-	});                                       //-|
+	// Cloning small-nav for mobile version
+	$('.small-nav').clone().addClass('clone').insertAfter('.main-nav');
+	$('.small-nav.clone').prepend('<li><a class="underlined" href="#feedback" data-toggle="modal">Написать нам</a></li>');
 	// Animate placeholders
 	if ($('.animated-placeholder').length >= 1) {
 		var hidden_styles = {'opacity': '0', 'left': '-65px'};
@@ -117,6 +129,11 @@ $(document).ready(function(){
 			event.stopPropagation();
 		}
 	});
+	// To the top button
+	$('body').prepend('<div class="to-the-top"></div>');
+	$('.to-the-top').on('click', function(){
+		$("body,html").animate({scrollTop: 0}, 400);
+	});
 	// Sticky menu
 	if ($(window).width() > 768 || screen.width > 768) {
 		if($(document).scrollTop() > 136) {
@@ -133,6 +150,16 @@ $(document).ready(function(){
 				fix_menu_off();
 			}
 		}
+		if($(document).scrollTop() > 400) {
+			if(!$('.to-the-top').is(':visible')) {
+				$('.to-the-top').fadeIn();
+			}
+		} else {
+			if($('.to-the-top').is(':visible')) {
+				$('.to-the-top').fadeOut();
+			}
+		}
+		
 	});
 	// Mobile menu
 	$('.mobile-menu-trigger').on('click', function(){
@@ -154,6 +181,46 @@ $(document).ready(function(){
 			$('header nav').animate({
 				left:0
 			},300);
+		}
+	});
+	// Disable .catalog-button
+	if($(window).width() < 768 || screen.width < 768) {
+		$('.small-nav.clone').show();
+	}
+	$('.catalog-button').on('click', function(e){
+		if($(window).width() < 768 || screen.width < 768) {
+			e.preventDefault();
+			if($('.small-nav.clone').is(':visible')) {
+				$('.small-nav.clone').hide();
+				$('.main-nav').slideDown();
+			} else {
+				$('.main-nav').slideUp();
+				setTimeout(function(){
+					$('.small-nav.clone').show();
+				}, 400);
+			}
+		}
+	});		
+	$('.main-nav > li > a').on('click', function(e){
+		if($(window).width() < 768 || screen.width < 768) {
+			e.preventDefault();
+			$('.main-nav > li > a').next('ul').slideUp();
+			var next_ul = $(this).next('ul');
+			if(next_ul.length >= 1) {
+				if(next_ul.is(':visible')) {
+					next_ul.slideUp();
+				} else {
+					next_ul.slideDown();
+				}
+			}
+		}
+	});
+	// Filters open/close
+	$('.bx-filter-trigger button').on('click', function(){
+		if($('.bx-filter').is(':visible')) {
+			$('.bx-filter').slideUp();
+		} else {
+			$('.bx-filter').slideDown();
 		}
 	});
 	// FancyBox 2
@@ -403,19 +470,40 @@ $(document).ready(function(){
 		}
 	}
 	
-	// AJAX reviews adding (for test)
+	/* Код ниже написан для тестирования и комментариев к функциям. */
+	/* На продакшене удалить                                        */
+	
+	// Используйте функцию preloader_top( percent ) для прелоддера вверху во время обработки ajax запросов.
+	// Самый простой вызов это
+	// preloader_top(100); - Прелоддер пробежит от 0 до 100 за 0,4 сек.
+	// Можно запускать функцию во время выполнения запроса, как только вам становится известен % выполнения
+	var test_count = 1;
+	var test_preloader_interval = setInterval(function(){
+		if (test_count > 4) { clearInterval(test_preloader_interval); }
+		preloader_top(test_count * 20);
+		test_count++;
+	}, 1000);
+	
+	
+	// Это тестовое действие, что бы продемонстрировать работу функции add_to_cart_onclick()
+	$('.to-the-cart').on('click', function(){
+		$('.basket-details-body > .item:last').clone().appendTo('.basket-details-body');
+		add_to_cart_onclick();   // После добавления элемента в мини-корзину запустите эту функцию и произойдет анимация и пересвет корзины
+	});
+	
+	// AJAX reviews adding 
 	$('.reviews .pager a').on('click', function(){
-		$('.reviews .pager').hide();
+		$('.reviews .pager').hide(); // Перед отправкой скрываем кнопку и отображаем прелоддер
 		$('.reviews .loader').show();
 		$.ajax({
 			url : 'additional-reviews',
 			dataType : 'html',
 			success : function(data){
-				var new_element = $('.reviews ul').append('<li></li>');
-				$('.reviews ul li:last').append(data).hide().fadeIn();
-				check_review_rating();
+				var new_element = $('.reviews ul').append('<li></li>'); // После получения создаем новые элементы списка
+				$('.reviews ul li:last').append(data).hide().fadeIn();  // плавное появление
+				check_review_rating();                                  // проставляем нужное количество звездочек
 				setTimeout(function(){
-					$('.reviews .loader').hide();
+					$('.reviews .loader').hide();                        // убираем прелоддер и возвращаем кнопку обратно
 					$('.reviews .pager').show();
 				}, 500);
 			}

@@ -36,6 +36,7 @@
 @media only screen and (max-width : 768px) {
 	.mobile-menu-trigger { display: block; }
 	.small-nav { display: none; }
+	.small-nav.clone { display: block; }
 	.header-feedback-col { display: none; }
 	header { padding-top: 140px; padding-bottom: 20px; }
 	.header-logo-col {
@@ -47,6 +48,7 @@
 		position: absolute;
 		top: 41px;
 		right: 0;
+		width: 16%;
 	}
 	.header-basket-col .basket .total-price { display: none; }
 	.header-search-col { width: 100%; }
@@ -54,7 +56,8 @@
 	header nav {
 		width: 320px;
 		height: auto;
-		min-height: 100%;
+		height: 100%;
+		overflow: auto;
 		position: fixed;
 		top: 0;
 		left: -320px;
@@ -65,9 +68,70 @@
 		position: relative;
 		overflow: hidden;
 	}
-	
+	.mobile-menu-on header nav .row > div {
+		padding: 0;
+	}
+	.catalog-button {
+		float: none;
+		width: 100%;
+		font-size: 22px;
+		padding-left: 40px;
+		justify-content: flex-start;
+	}
+		.catalog-button:hover {
+			background: #C83D43;
+		}
 	.main-nav {
 		flex-direction: column;
+		display: none;
+		margin-left: 0;
+		background: #C83D43;
+		padding-left: 40px;
+		overflow: auto;
+	}
+		.main-nav > li {
+			margin-top: 0;
+			height: auto;
+		}
+		.main-nav > li:hover, .main-nav > li.active {
+			background: transparent;
+			height: auto;
+		}
+			.main-nav > li > a {
+				font-size: 20px;
+			}
+			.main-nav > li:hover > a, .main-nav > li.active > a {
+				color: #FFFFFF;
+			}
+				.main-nav > li a span {
+					margin: 0;
+				}
+			.main-nav > li > ul {
+				display: none;
+				position: relative;
+				padding: 0;
+				background: #C83D43;
+				top: 0;
+				box-shadow: none;
+				visibility: visible;
+				opacity: 1;
+			}
+				/*.main-nav > li:hover > ul {
+					display: block;
+				}*/
+				.main-nav > li > ul > li {
+					width: 100%;
+				}
+				.main-nav > li > ul > li > a {
+					color: #FFFFFF;
+					text-decoration: none;
+				}
+					.main-nav > li > ul > li > ul {
+						padding-left: 30px;
+						display: none;
+					}
+	.modal-dialog {
+		width: calc(100% - 20px);
 	}
 	.basket-details-header, .header-basket-col .basket-details::before {
 		display: none;
@@ -77,6 +141,8 @@
 		width: 100%;
 		top: 110px;
 		right: 0;
+		height: calc(100% - 110px);
+		overflow: auto;
 	}
 	.basket-details-footer {
 		display: flex;
@@ -152,6 +218,12 @@
 	}
 	.footer-copyright > div:last-child {
 		padding-top: 20px;
+	}
+	.bx-filter-trigger {
+		display: block;
+	}
+	.bx-filter {
+		display: none;
 	}
 }
 
