@@ -143,7 +143,7 @@ $(document).ready(function(){
 		}
 	}
 	$(window).scroll(function(){
-		if($(window).width() > 768 || screen.width > 768) {
+		if($(window).width() > 992 || screen.width > 992) {
 			if($(document).scrollTop() > 136) {
 				fix_menu_on();
 			} else {
@@ -163,6 +163,11 @@ $(document).ready(function(){
 	});
 	// Mobile menu
 	$('.mobile-menu-trigger').on('click', function(){
+		if($(window).width() < 480 || screen.width < 480) {
+			var left_offset = 250;
+		} else {
+			var left_offset = 320;
+		}
 		if($('body').hasClass('mobile-menu-on')) {
 			$('body').animate({
 				left:0
@@ -176,7 +181,7 @@ $(document).ready(function(){
 		} else {
 			$('body').addClass('mobile-menu-on');
 			$('body').animate({
-				left:320
+				left:left_offset
 			},300);
 			$('header nav').animate({
 				left:0
@@ -190,13 +195,13 @@ $(document).ready(function(){
 	$('.catalog-button').on('click', function(e){
 		if($(window).width() < 768 || screen.width < 768) {
 			e.preventDefault();
-			if($('.small-nav.clone').is(':visible')) {
-				$('.small-nav.clone').hide();
+			if(!$('.main-nav').hasClass('open')) {
+				$('.main-nav').addClass('open');
 				$('.main-nav').slideDown();
 			} else {
 				$('.main-nav').slideUp();
 				setTimeout(function(){
-					$('.small-nav.clone').show();
+					$('.main-nav').removeClass('open');
 				}, 400);
 			}
 		}
@@ -223,10 +228,18 @@ $(document).ready(function(){
 			$('.bx-filter').slideDown();
 		}
 	});
+	// Move additional nav below goods
+	if($('.additional-navigation').length >= 1) {
+		if($(window).width() < 480 || screen.width < 480) {
+			var block = $('.bx-filter-trigger').parent('.row');
+			$('.additional-navigation').insertAfter(block);
+		}
+	}
 	// FancyBox 2
 	if($('a.zoom').length) { $('a.zoom').fancybox(); }
 	// dotdotdot
 	if($(".goods .item .description").length >= 1) { $(".goods .item .description").dotdotdot(); }
+	if($('.goods.recent-view .item .title').length >= 1) { $('.goods.recent-view .item .title').dotdotdot(); }
 	if($('.blog').length) { $(".dotted").dotdotdot(); }
 	//Mini-Cart remove item
 	$('.basket-details-body .item .remove a').on('click', function(e){

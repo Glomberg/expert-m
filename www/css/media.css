@@ -198,7 +198,7 @@
 		color: #FFFFFF !important;
 	}
 	.goods .item {
-		box-shadow: none !important;
+		/*box-shadow: none !important;*/
 	}
 	.goods .item:not(.sale) {
 		border-top: 6px solid #464647;
@@ -208,7 +208,7 @@
 		color: #000 !important;
 	}
 	.goods .to-the-cart {
-		bottom: 0;
+		bottom: 12px;
 	}
 	footer, .footer-socials, .footer-copyright > div:last-child {
 		text-align: center;
@@ -359,11 +359,65 @@
 	#select-outpost-modal .checkboxes label .outpost-title {
 		font-size: 16px;
 	}
+	.main-nav > li > ul > li > a {
+		font-size: 14px;
+	}
+	.single article img {
+		max-width: 100%;
+	}
 }
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 480px) {
-	
+	header nav {
+		width: 250px;
+	}
+	.mobile-menu-trigger {
+		width: 35px;
+		height: 35px;
+	}
+	.header-logo-col {
+		top: 35px;
+		width: 58%;
+	}
+		.header-logo-col > a  {
+			display: block;
+		}
+			.header-logo-col > a  img {
+				width: 100%;
+			}
+	.header-basket-col {
+		top: 26px;
+		width: 24%;
+	}
+	.header-phones {
+		font-size: 17px;
+	}
+	.basket-details-body .item .title {
+		font-size: 15px;
+	}
+	.basket-details-body .item .pcs {
+		width: 14%;
+	}
+	.basket-details-body .item .price {
+		width: 26%;
+	}
+	#frontpage-carousel .item > a > div span {
+		font-size: 1.5em;
+	}
+	.frontpage-categories .offer-of-the-week .description {
+		font-size: 23px;
+	}
+	.stages {
+		font-size: 14px;
+	}
+	#order-step2 input[id="shiping-variant-courier"] + label .checkbox-content > div:nth-child(1) {
+		margin-bottom: 15px;
+	}
+	.goods.recent-view .to-the-cart {
+		right: 5px;
+		bottom: 5px;
+	}
 }
 
 /* Custom, iPhone Retina */
