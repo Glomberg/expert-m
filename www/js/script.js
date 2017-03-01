@@ -248,8 +248,12 @@ $(document).ready(function(){
 		item.slideUp();
 		setInterval(function(){
 			item.remove();
+			check_cart_summs()
 		}, 400);
 	});
+	function check_cart_summs() {
+		
+	}
 	// Waves buttons
 	Waves.init();
 	Waves.attach(".to-the-cart", [
