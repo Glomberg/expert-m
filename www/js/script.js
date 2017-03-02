@@ -11,11 +11,8 @@
 		}, 800);
 	}
 }
-function add_to_cart_onclick() {
-	// события, которые произойдут после нажатия "В корзину"
-	// анимация мини-корзины, пересчет итого, пересчет бесплатной доставки
-	// эта функция отработает так же и после загрузки страницы
-		// Shake-effect
+function check_mini_cart() {
+	// Shake-effect
 	var in_action = false;
 	if(!in_action) {
 		in_action = true;
@@ -25,7 +22,7 @@ function add_to_cart_onclick() {
 			in_action = false;
 		}, 600);
 	}
-		// Check summ
+	// Check summ
 	var old_val = parseFloat($('.header-basket-col .basket .total-price > span').text());
 	var summ = 0;
 	
@@ -34,11 +31,12 @@ function add_to_cart_onclick() {
 			summ += parseFloat($(this).attr('data-item-summ'));
 		}
 	});
-	if (summ != 0) {
-		$('.basket-details-footer .summ span:eq(1)').text(summ);
-	}
+	$('.basket-details-footer .summ span:eq(1)').text(summ);
 	
 	var i = 1;
+	if (interval) {
+		clearInterval(interval);
+	}
 	if ( old_val > summ ) {
 		var step = (old_val - summ) / 10;
 		var interval = setInterval(function(){
@@ -62,7 +60,9 @@ function add_to_cart_onclick() {
 			i++;
 		}, 6000 / 100);
 	}
-		// Check shiping
+	//Set the badge
+	$('.header-basket-col .basket .badge').text($('.basket-details-body .item').length);
+	//Check shiping
 	if ($('.free-shiping').length) {
 		if (summ > 500) {
 			$('.free-shiping .car .ico').css('width', '100%');
@@ -74,6 +74,22 @@ function add_to_cart_onclick() {
 			var car_range = 100 - ( free_shiping_left * 100 / 500 );
 			$('.free-shiping .car .ico').css('width', car_range + '%');
 		}
+	}
+}
+function check_cart() {
+	
+}
+function rem_from_cart() {
+	
+}
+function rem_from_mini_cart(item) {
+	item.slideUp();
+	setTimeout(function(){
+		item.remove();
+		check_mini_cart();
+	}, 400);
+	if($('.cart').length >= 1) {
+		// удаляем соотв. позицию в таблице
 	}
 }
 function fix_menu_on() {
@@ -88,8 +104,11 @@ function fix_menu_off() {
 $(document).ready(function(){
 	// Preloader top insert
 	$('body').prepend('<div class="preloader-top"><div></div></div>');
-	// Check mini-cart and shiping on load
-	add_to_cart_onclick();
+	// Check mini-cart and cart on load
+	check_mini_cart();
+	if( $('.cart').length >= 1 ) {
+		check_cart();
+	}
 	// Cloning small-nav for mobile version
 	$('.small-nav').clone().addClass('clone').insertAfter('.main-nav');
 	$('.small-nav.clone').prepend('<li><a class="underlined" href="#feedback" data-toggle="modal">Написать нам</a></li>');
@@ -241,19 +260,19 @@ $(document).ready(function(){
 	if($(".goods .item .description").length >= 1) { $(".goods .item .description").dotdotdot(); }
 	if($('.goods.recent-view .item .title').length >= 1) { $('.goods.recent-view .item .title').dotdotdot(); }
 	if($('.blog').length) { $(".dotted").dotdotdot(); }
-	//Mini-Cart remove item
-	$('.basket-details-body .item .remove a').on('click', function(e){
-		e.preventDefault();
-		var item = $(this).parent().parent('.item');
-		item.slideUp();
-		setInterval(function(){
-			item.remove();
-			check_cart_summs()
-		}, 400);
+	//Add to cart function
+	$('.to-the-cart').on('click', function(){
+		// Это тестовое действие, здесь должен быть запрос к серверу
+		$('.basket-details-body > .item:last').clone().appendTo('.basket-details-body');
+		//
+		preloader_top(100);
+		check_mini_cart();
 	});
-	function check_cart_summs() {
-		
-	}
+	//Mini-Cart remove item
+	$('.basket-details-body').on('click', '.item .remove a', function(e){
+		e.preventDefault();
+		rem_from_mini_cart($(this).parent().parent('.item'));
+	});
 	// Waves buttons
 	Waves.init();
 	Waves.attach(".to-the-cart", [
@@ -516,14 +535,7 @@ $(document).ready(function(){
 		if (test_count > 4) { clearInterval(test_preloader_interval); }
 		preloader_top(test_count * 20);
 		test_count++;
-	}, 1000);
-	
-	
-	// Это тестовое действие, что бы продемонстрировать работу функции add_to_cart_onclick()
-	$('.to-the-cart').on('click', function(){
-		$('.basket-details-body > .item:last').clone().appendTo('.basket-details-body');
-		add_to_cart_onclick();   // После добавления элемента в мини-корзину запустите эту функцию и произойдет анимация и пересвет корзины
-	});
+	}, 1000);	
 	
 	// AJAX reviews adding 
 	$('.reviews .pager a').on('click', function(){

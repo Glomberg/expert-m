@@ -2045,7 +2045,7 @@ img.float-right {
 	color: #CB1F26;
 }
 .cart table .old-price {
-	font-size: 14px;
+	font-size: 10px;
 	color: #000000;
 	text-decoration: line-through;
 }
@@ -2053,7 +2053,7 @@ img.float-right {
 .cart table .old-price span, 
 .cart table td:nth-child(6) span,
 .cart table td:nth-child(7) span {
-	font-size: 10px;
+	font-size: 14px;
 }
 .cart table ul li:before {
 	content: '- ';
