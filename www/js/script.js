@@ -77,19 +77,50 @@ function check_mini_cart() {
 	}
 }
 function check_cart() {
-	
+	if($('.cart tbody tr').length >= 1) {
+		var summ = 0;
+		var discount_summ = 0;
+		$('.cart tbody tr').each(function(){
+			var price = parseFloat($(this).attr('data-item-price'));
+			var count = $(this).find('input').val();
+			$(this).children('td:eq(6)').html('<div class="normal-price"><span>' + price * count + '</span></div>');
+			summ += price * count;
+			if(!(void 0 === $(this).attr('data-item-discount-price'))) {
+				var discount_price = parseFloat($(this).attr('data-item-discount-price'));
+				discount_summ += discount_price * count;
+				$(this).children('td:eq(6)').html('<div class="special-price"><span>' + discount_price * count + '</span></div><div class="old-price"><span>' + price * count + '</span></div>');
+			}
+		});
+		$('.cart .summ > span').text(summ);
+		$('.cart .summ2 span > span').text(discount_summ);
+	} else {
+		$('.cart .summ > span').text(0);
+		$('.cart .summ2 span > span').text(0);
+	}
 }
-function rem_from_cart() {
-	
+function rem_from_cart(articul) {
+	rem_from_mini_cart(articul);
+	var item = $('[data-item-artikul="' + articul + '"]');
+	item.css('transform', 'scale(0)');
+	setTimeout(function(){
+		item.remove();
+		check_cart();
+	}, 400);
 }
-function rem_from_mini_cart(item) {
+function rem_from_mini_cart(articul) {
+	var item = $('[data-artikul="' + articul + '"]');
 	item.slideUp();
 	setTimeout(function(){
 		item.remove();
 		check_mini_cart();
 	}, 400);
 	if($('.cart').length >= 1) {
-		// удаляем соотв. позицию в таблице
+		var cart_item = $('[data-item-artikul="' + articul + '"]');
+		cart_item.css('transform', 'scale(0)');
+		setTimeout(function(){
+			cart_item.remove();
+			check_cart();
+		}, 400);
 	}
 }
 function fix_menu_on() {
@@ -271,7 +302,12 @@ $(document).ready(function(){
 	//Mini-Cart remove item
 	$('.basket-details-body').on('click', '.item .remove a', function(e){
 		e.preventDefault();
-		rem_from_mini_cart($(this).parent().parent('.item'));
+		rem_from_mini_cart($(this).parent().parent('.item').attr('data-artikul'));
+	});
+	//Cart-page remove item
+	$('.trash').on('click', function(e){
+		e.preventDefault();
+		rem_from_cart($(this).parent().parent('tr').attr('data-item-artikul'));
 	});
 	// Waves buttons
 	Waves.init();
@@ -366,6 +402,7 @@ $(document).ready(function(){
 			} else {
 				$('#'+ id).siblings('input[type="number"]').val($('#'+ id).val());
 			}
+			check_cart();
 		}
 		$('.count input[type="text"]').on('keyup, change', function(){
 			if($(this).val().search(/[^0-9]/) == 0) {
@@ -467,6 +504,14 @@ $(document).ready(function(){
 					$(this).addClass('swiped');
 				}
 			}
+		}
+	});
+	$('.mobile-menu-on header nav').swipe({
+		swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
+			//if (direction == 'left') {
+				//fix_menu_off();
+				console.log('swiped');
+			//}
 		}
 	});
 	// Yandex MAP
