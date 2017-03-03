@@ -558,7 +558,8 @@ header {
 							border: 2px solid #EDF3F6;
 							border-radius: 2px;
 						}
-							.basket-details-body .item .pcs span {
+							.basket-details-body .item .pcs:after {
+								content: ' шт';
 								font-size: 10px;
 							}
 						.basket-details-body .item  .price {
@@ -573,7 +574,8 @@ header {
 								justify-content: center;
 								text-align: right;
 							}
-							.basket-details-body .item  .price span {
+							.basket-details-body .item  .price > div > div:after {
+								content: ' руб';
 								font-size: 10px;
 							}
 							.basket-details-body .item  .price .special-price {
@@ -1551,6 +1553,30 @@ footer {
 	.buy-button a:hover {
 		opacity: 0.75;
 	}
+.modal .input.stars-input {
+	margin-bottom: 0;
+	display: flex;
+	justify-content: flex-start;
+	flex-direction: row-reverse;	
+}
+	.stars-input input {
+		display: none;
+	}
+	.stars-input label {
+		display: inline-block;
+		width: 25px;
+		height: 20px;
+		background: url('../images/star-gray.svg') no-repeat center center;
+		background-size: contain;
+		margin-left: -2px;
+		cursor: pointer;
+	}
+	.stars-input input:checked + label,
+	.stars-input input:checked + label ~ label,
+	.stars-input label:hover,
+	.stars-input label:hover ~ label	{
+		background-image: url('../images/star-orange.svg');
+	}
 .reviews {
 	padding-top: 100px;
 }
@@ -2444,11 +2470,18 @@ img.float-right {
 #payment-cash-ico {
 	width: 83px;
 	height: 72px;
+	
 }
 #payment-card-ico {
 	width: 80px;
 	height: 59px;
 }
+	#order-step2 input[id="shiping-variant-courier"] + label svg,
+	#order-step2 input[id="shiping-variant-self"] + label svg,
+	#order-step2 input[id="payment-variant-cash"] + label svg,
+	#order-step2 input[id="payment-variant-card"] + label svg {
+		transition: width 0.3s ease-in-out;
+	}
 	#order-step2 input[id="shiping-variant-courier"]:checked + label path,
 	#order-step2 input[id="shiping-variant-self"]:checked + label path,
 	#order-step2 input[id="payment-variant-cash"]:checked + label path,
@@ -2594,4 +2627,7 @@ img.float-right {
 .jspDrag {
 	background: #DB4248;
 	border-radius: 2px;
+}
+.packery-grid img {
+	max-width: 100%;
 }

@@ -418,6 +418,23 @@
 		right: 5px;
 		bottom: 5px;
 	}
+	.single article table th, .single article table td {
+		font-size: 14px;
+	}
+	#order-step2 input[id="shiping-variant-courier"]:checked + label svg,
+	#order-step2 input[id="shiping-variant-self"]:checked + label svg,
+	#order-step2 input[id="payment-variant-cash"]:checked + label svg,
+	#order-step2 input[id="payment-variant-card"]:checked + label svg{
+		width: 23px;
+	}
+	#datepicker {
+		width: 50% !important;
+		font-size: 14px !important;
+		padding-left: 2px !important;
+	}
+	#timepicker {
+		font-size: 14px;
+	}
 }
 
 /* Custom, iPhone Retina */

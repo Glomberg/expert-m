@@ -25,20 +25,29 @@ function check_mini_cart() {
 	// Check summ
 	var old_val = parseFloat($('.header-basket-col .basket .total-price > span').text());
 	var summ = 0;
+	var discount_summ = 0;
 	
 	$('.basket-details-body .item').each(function(){
-		if($(this).attr('data-item-summ')) {
-			summ += parseFloat($(this).attr('data-item-summ'));
+		var price = parseFloat($(this).attr('data-item-price'));
+		var count = parseInt($(this).find('.pcs').text());
+		$(this).find('.price > div').html('<div class="normal-price">' + price * count + '</div>');
+		summ += price * count;
+		if(!(void 0 === $(this).attr('data-item-discount-price'))) {
+			var discount_price = parseFloat($(this).attr('data-item-discount-price'));
+			discount_summ += discount_price * count;
+			$(this).find('.price > div').html('<div class="special-price">' + discount_price * count + '</div><div class="old-price">' + price * count + '</div>');
+		} else {
+			discount_summ += price * count;
 		}
 	});
-	$('.basket-details-footer .summ span:eq(1)').text(summ);
+	$('.basket-details-footer .summ span:eq(1)').text(discount_summ);
 	
 	var i = 1;
 	if (interval) {
 		clearInterval(interval);
 	}
-	if ( old_val > summ ) {
-		var step = (old_val - summ) / 10;
+	if ( old_val > discount_summ ) {
+		var step = (old_val - discount_summ) / 10;
 		var interval = setInterval(function(){
 			if (i <= 10) {
 				var value = old_val - step * i;
@@ -49,7 +58,7 @@ function check_mini_cart() {
 			i++;
 		}, 6000 / 100);
 	} else {
-		var step = (summ - old_val) / 10;
+		var step = (discount_summ - old_val) / 10;
 		var interval = setInterval(function(){
 			if (i <= 10) {
 				var value = old_val + step * i;
@@ -61,7 +70,11 @@ function check_mini_cart() {
 		}, 6000 / 100);
 	}
 	//Set the badge
-	$('.header-basket-col .basket .badge').text($('.basket-details-body .item').length);
+	if ($('.basket-details-body .item[data-item-artikul]').length <= 0) {
+		$('.header-basket-col .basket .badge').text('');
+	} else {
+		$('.header-basket-col .basket .badge').text($('.basket-details-body .item[data-item-artikul]').length);
+	}
 	//Check shiping
 	if ($('.free-shiping').length) {
 		if (summ > 500) {
@@ -81,14 +94,22 @@ function check_cart() {
 		var summ = 0;
 		var discount_summ = 0;
 		$('.cart tbody tr').each(function(){
+			var artikul = $(this).attr('data-item-artikul');
 			var price = parseFloat($(this).attr('data-item-price'));
 			var count = $(this).find('input').val();
+			var count_mini = parseInt($('.basket-details .item[data-item-artikul="' + artikul + '"] .pcs').text());
+			if (count != count_mini) {
+				$('.basket-details .item[data-item-artikul="' + artikul + '"] .pcs').text(count);
+				check_mini_cart();
+			}
 			$(this).children('td:eq(6)').html('<div class="normal-price"><span>' + price * count + '</span></div>');
 			summ += price * count;
 			if(!(void 0 === $(this).attr('data-item-discount-price'))) {
 				var discount_price = parseFloat($(this).attr('data-item-discount-price'));
 				discount_summ += discount_price * count;
 				$(this).children('td:eq(6)').html('<div class="special-price"><span>' + discount_price * count + '</span></div><div class="old-price"><span>' + price * count + '</span></div>');
+			} else {
+				discount_summ += price * count;
 			}
 		});
 		$('.cart .summ > span').text(summ);
@@ -108,7 +129,7 @@ function rem_from_cart(articul) {
 	}, 400);
 }
 function rem_from_mini_cart(articul) {
-	var item = $('[data-artikul="' + articul + '"]');
+	var item = $('[data-item-artikul="' + articul + '"]');
 	item.slideUp();
 	setTimeout(function(){
 		item.remove();
@@ -136,9 +157,11 @@ $(document).ready(function(){
 	// Preloader top insert
 	$('body').prepend('<div class="preloader-top"><div></div></div>');
 	// Check mini-cart and cart on load
-	check_mini_cart();
 	if( $('.cart').length >= 1 ) {
 		check_cart();
+		check_mini_cart();
+	} else {
+		check_mini_cart();
 	}
 	// Cloning small-nav for mobile version
 	$('.small-nav').clone().addClass('clone').insertAfter('.main-nav');
@@ -302,7 +325,7 @@ $(document).ready(function(){
 	//Mini-Cart remove item
 	$('.basket-details-body').on('click', '.item .remove a', function(e){
 		e.preventDefault();
-		rem_from_mini_cart($(this).parent().parent('.item').attr('data-artikul'));
+		rem_from_mini_cart($(this).parent().parent('.item').attr('data-item-artikul'));
 	});
 	//Cart-page remove item
 	$('.trash').on('click', function(e){
