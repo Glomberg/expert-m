@@ -28,16 +28,18 @@ function check_mini_cart() {
 	var discount_summ = 0;
 	
 	$('.basket-details-body .item').each(function(){
-		var price = parseFloat($(this).attr('data-item-price'));
-		var count = parseInt($(this).find('.pcs').text());
-		$(this).find('.price > div').html('<div class="normal-price">' + price * count + '</div>');
-		summ += price * count;
-		if(!(void 0 === $(this).attr('data-item-discount-price'))) {
-			var discount_price = parseFloat($(this).attr('data-item-discount-price'));
-			discount_summ += discount_price * count;
-			$(this).find('.price > div').html('<div class="special-price">' + discount_price * count + '</div><div class="old-price">' + price * count + '</div>');
-		} else {
-			discount_summ += price * count;
+		if($(this).attr('data-item-price')) {
+			var price = parseFloat($(this).attr('data-item-price'));
+			var count = parseInt($(this).find('.pcs').text());
+			$(this).find('.price > div').html('<div class="normal-price">' + price * count + '</div>');
+			summ += price * count;
+			if(!(void 0 === $(this).attr('data-item-discount-price'))) {
+				var discount_price = parseFloat($(this).attr('data-item-discount-price'));
+				discount_summ += discount_price * count;
+				$(this).find('.price > div').html('<div class="special-price">' + discount_price * count + '</div><div class="old-price">' + price * count + '</div>');
+			} else {
+				discount_summ += price * count;
+			}
 		}
 	});
 	$('.basket-details-footer .summ span:eq(1)').text(discount_summ);
@@ -517,7 +519,7 @@ $(document).ready(function(){
 			});
 		},400);
 	});
-	// Touch swipe
+	// Swipe
 	$(".cart table tr").swipe({
 		swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
 			if (direction == 'left' || direction == 'right') {
@@ -529,14 +531,31 @@ $(document).ready(function(){
 			}
 		}
 	});
-	$('.mobile-menu-on header nav').swipe({
+	$('header nav').swipe({
 		swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
-			//if (direction == 'left') {
-				//fix_menu_off();
+			if (direction == 'left') {
+				if($('body').hasClass('mobile-menu-on')) {
+					$('body').animate({
+						left:0
+					},300);
+					$('header nav').animate({
+						left:-320
+					},300);
+					setTimeout(function(){
+						$('body').removeClass('mobile-menu-on');
+					},300);
+				}
 				console.log('swiped');
-			//}
+			}
 		}
 	});
+	/*$(document).on('swipeleft', function(){
+		if($('body').hasClass('.mobile-menu-on')) {
+			fix_menu_off();
+			console.log('swiped');
+		}
+		
+	});*/
 	// Yandex MAP
 	if($('#map').length >= 1) {
 		var adress = [];
