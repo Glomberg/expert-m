@@ -2118,6 +2118,7 @@ img.float-right {
 	display: flex;
 	justify-content: space-between;
 	margin-top: 8px;
+	position: relative;
 }
 .coupon > div {
 	display: none;
@@ -2157,7 +2158,7 @@ img.float-right {
 		}
 
 .cart .coupon .animated-placeholder + label {
-	left: 19px;
+	left: 4px;
 }		
 .coupon input {
 	height: 35px;
