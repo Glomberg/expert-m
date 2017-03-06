@@ -365,6 +365,12 @@
 	.single article img {
 		max-width: 100%;
 	}
+	.grid-sizer, .packery-grid-item {
+		width: 50%;
+	}
+	.packery-grid-item.width-2 {
+		width: 100%;
+	}
 }
 
 /* Extra Small Devices, Phones */
@@ -434,6 +440,12 @@
 	}
 	#timepicker {
 		font-size: 14px;
+	}
+	.grid-sizer, .packery-grid-item {
+		width: 100%;
+	}
+	.packery-grid-item.width-2 {
+		width: 100%;
 	}
 }
 

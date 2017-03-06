@@ -2628,6 +2628,16 @@ img.float-right {
 	background: #DB4248;
 	border-radius: 2px;
 }
+.grid-sizer, .packery-grid-item {
+	width: 20%;
+}
+.packery-grid-item.width-2 {
+	width: 40%;
+}
+.packery-grid-item {
+	padding: 10px;
+}
 .packery-grid img {
-	max-width: 100%;
+	width: 100%;
+	height: auto;
 }
