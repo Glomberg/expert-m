@@ -556,6 +556,22 @@ $(document).ready(function(){
 		}
 		
 	});*/
+	
+	// Masonry
+	$('.main-nav > li > ul').masonry({
+		itemSelector: '.main-nav > li > ul > li',
+		columnWidth: '.main-nav > li > ul > li',
+		percentPosition: true,
+		containerStyle: null
+	});
+	
+	$('.catalog-text-category').masonry({
+		itemSelector: '.catalog-text-category ul',
+		columnWidth: '.catalog-text-category ul',
+		percentPosition: true
+	});
+	
+	
 	// Yandex MAP
 	if($('#map').length >= 1) {
 		var adress = [];
