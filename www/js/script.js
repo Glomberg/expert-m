@@ -565,11 +565,14 @@ $(document).ready(function(){
 		containerStyle: null
 	});
 	
-	$('.catalog-text-category').masonry({
-		itemSelector: '.catalog-text-category ul',
-		columnWidth: '.catalog-text-category ul',
-		percentPosition: true
-	});
+	if( $('.masonry-container').length >= 1 ) {
+		$('.masonry-container').masonry({
+			itemSelector: '.masonry-container > ul',
+			columnWidth: '.masonry-container > ul',
+			percentPosition: true
+		});
+	}
+	
 	
 	
 	// Yandex MAP
